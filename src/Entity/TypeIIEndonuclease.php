@@ -12,67 +12,62 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * TypeII Endonucleases
+ * Enzymes - TypeII Endonucleases
  * @package App\Entity
  * @author Amélie DUVERNET akka Amelaye <amelieonline@gmail.com>
- * @ApiResource
+ * @ApiResource(
+ *     collectionOperations={"get","post"},
+ *     itemOperations={"get"}
+ * )
  * @ORM\Entity
  */
 class TypeIIEndonuclease
 {
     /**
-     * First endonuclease of the list
-     * @var string
+     * @var     string      First endonuclease of the list
      * @ORM\Id
      * @ORM\Column(type="string")
      */
     private $id;
 
     /**
-     * All endonucleases recognizing the same pattern
-     * @var array
+     * @var     array       All endonucleases recognizing the same pattern
      * @ORM\Column(type="array")
      */
     private $samePattern;
 
     /**
-     * Recognition pattern
-     * @var string
+     * @var     string      Recognition pattern
      * @ORM\Column(type="string")
      */
     private $recognitionPattern;
 
     /**
-     * Recognition pattern for computing
-     * @var string
+     * @var     string      Recognition pattern for computing
      * @ORM\Column(type="string")
      */
     private $computingPattern;
 
     /**
-     * Length of all recognition pattern
-     * @var int
+     * @var     int         Length of all recognition pattern
      * @ORM\Column(type="integer")
      */
     private $lengthRecognitionPattern;
 
     /**
-     * Cleavage position in upper strand
-     * @var int
+     * @var     int         Cleavage position in upper strand
      * @ORM\Column(type="integer")
      */
     private $cleavagePosUpper;
 
     /**
-     * Cleavage position in lower strand, relative to previous one
-     * @var int
+     * @var     int         Cleavage position in lower strand, relative to previous one
      * @ORM\Column(type="integer")
      */
     private $cleavagePosLower;
 
     /**
-     * Number of non-N bases within recognition pattern
-     * @var int
+     * @var     int         Number of non-N bases within recognition pattern
      * @ORM\Column(type="integer")
      */
     private $nbNonNBases;

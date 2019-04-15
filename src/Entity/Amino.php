@@ -1,11 +1,10 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: amelaye
- * Date: 2019-04-11
- * Time: 17:09
+ * Database of elements - Amino acids
+ * Inspired by BioPHP's project biophp.org
+ * Created 13 april 2019
+ * Last modified 13 april 2019
  */
-
 namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
@@ -13,15 +12,17 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * This is a dummy entity. Remove it!
+ * Database of elements - Amino acids
  *
- * @ApiResource
+ * @ApiResource(
+ *     collectionOperations={"get"},
+ *     itemOperations={"get"})
  * @ORM\Entity
  */
 class Amino
 {
     /**
-     * @var int
+     * @var     int         Id of the amino acid (auto-increment)
      *
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -30,7 +31,7 @@ class Amino
     private $id;
 
     /**
-     * @var string
+     * @var     string      Name of the amino
      *
      * @ORM\Column
      * @Assert\NotBlank
@@ -38,7 +39,7 @@ class Amino
     private $name;
 
     /**
-     * @var string
+     * @var     string      Name in 1 letter (A, L, S ...)
      *
      * @ORM\Column
      * @Assert\NotBlank
@@ -46,7 +47,7 @@ class Amino
     private $name1Letter;
 
     /**
-     * @var string
+     * @var string          Name in 3 letters (Ser, Leu ...)
      *
      * @ORM\Column
      * @Assert\NotBlank

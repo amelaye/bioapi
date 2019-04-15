@@ -12,16 +12,19 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * Class Elements
+ * Database of elements - weights included
  * @package App\Entity
  * @author Amélie DUVERNET akka Amelaye <amelieonline@gmail.com>
- * @ApiResource
+ * @ApiResource(
+ *     collectionOperations={"get","post"},
+ *     itemOperations={"get"}
+ * )
  * @ORM\Entity
  */
 class Element
 {
     /**
-     * @var int The id
+     * @var     int     The id (auto-increment)
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
@@ -29,14 +32,14 @@ class Element
     private $id;
 
     /**
-     * @var string water, carbone, for example
+     * @var     string  Water, carbone, for example
      * @ORM\Column
      * @Assert\NotBlank
      */
     private $name;
 
     /**
-     * @var float The weight of the nucleotid
+     * @var     float   The weight of the nucleotid
      * @ORM\Column
      * @Assert\NotBlank
      */
