@@ -1,0 +1,229 @@
+<?php
+
+namespace App\DataFixtures;
+
+use App\Entity\Amino;
+use Doctrine\Bundle\FixturesBundle\Fixture;
+use Doctrine\Common\Persistence\ObjectManager;
+
+/**
+ * Fixtures for aminos acids Data
+ * Class LoadAminoData
+ * @package App\DataFixtures
+ * @author Amélie DUVERNET akka Amelaye <amelieonline@gmail.com>
+ */
+class LoadAminoData extends Fixture
+{
+    public function load(ObjectManager $manager)
+    {
+        $amino = new Amino();
+        $amino->setName("Alanine");
+        $amino->setName1Letter('A');
+        $amino->setName3Letters('Ala');
+        $amino->setWeight1(89.09);
+        $amino->setWeight2(89.09);
+        $manager->persist($amino);
+
+        $amino = new Amino();
+        $amino->setName("Aspartate or asparagine");
+        $amino->setName1Letter('B');
+        $amino->setName3Letters('N/A');
+        $amino->setWeight1(132.12);
+        $amino->setWeight2(132.1);
+        $manager->persist($amino);
+
+        $amino = new Amino();
+        $amino->setName("Cysteine");
+        $amino->setName1Letter('C');
+        $amino->setName3Letters('Cys');
+        $amino->setWeight1(121.15);
+        $amino->setWeight2(121.15);
+        $manager->persist($amino);
+
+        $amino = new Amino();
+        $amino->setName("Aspartic acid");
+        $amino->setName1Letter('D');
+        $amino->setName3Letters('Asp');
+        $amino->setWeight1(133.1);
+        $amino->setWeight2(133.1);
+        $manager->persist($amino);
+
+        $amino = new Amino();
+        $amino->setName("Glutamic acid");
+        $amino->setName1Letter('E');
+        $amino->setName3Letters('Glu');
+        $amino->setWeight1(147.13);
+        $amino->setWeight2(147.13);
+        $manager->persist($amino);
+
+        $amino = new Amino();
+        $amino->setName("Phenylalanine");
+        $amino->setName1Letter('F');
+        $amino->setName3Letters('Phe');
+        $amino->setWeight1(165.19);
+        $amino->setWeight2(165.19);
+        $manager->persist($amino);
+
+        $amino = new Amino();
+        $amino->setName("Glycine");
+        $amino->setName1Letter('G');
+        $amino->setName3Letters('Gly');
+        $amino->setWeight1(75.07);
+        $amino->setWeight2(75.07);
+        $manager->persist($amino);
+
+        $amino = new Amino();
+        $amino->setName("Histidine");
+        $amino->setName1Letter('H');
+        $amino->setName3Letters('His');
+        $amino->setWeight1(155.16);
+        $amino->setWeight2(155.16);
+        $manager->persist($amino);
+
+        $amino = new Amino();
+        $amino->setName("Isoleucine");
+        $amino->setName1Letter('I');
+        $amino->setName3Letters('Ile');
+        $amino->setWeight1(131.18);
+        $amino->setWeight2(131.18);
+        $manager->persist($amino);
+
+        $amino = new Amino();
+        $amino->setName("Lysine");
+        $amino->setName1Letter('K');
+        $amino->setName3Letters('Lys');
+        $amino->setWeight1(146.19);
+        $amino->setWeight2(146.19);
+        $manager->persist($amino);
+
+        $amino = new Amino();
+        $amino->setName("Leucine");
+        $amino->setName1Letter('L');
+        $amino->setName3Letters('Leu');
+        $amino->setWeight1(131.18);
+        $amino->setWeight2(131.18);
+        $manager->persist($amino);
+
+        $amino = new Amino();
+        $amino->setName("Methionine");
+        $amino->setName1Letter('M');
+        $amino->setName3Letters('Met');
+        $amino->setWeight1(149.22);
+        $amino->setWeight2(149.22);
+        $manager->persist($amino);
+
+        $amino = new Amino();
+        $amino->setName("Asparagine");
+        $amino->setName1Letter('N');
+        $amino->setName3Letters('Asn');
+        $amino->setWeight1(132.12);
+        $amino->setWeight2(132.12);
+        $manager->persist($amino);
+
+        $amino = new Amino();
+        $amino->setName("Pyrrolysine");
+        $amino->setName1Letter('O');
+        $amino->setName3Letters('Pyr');
+        $amino->setWeight1(255.31);
+        $amino->setWeight2(255.31);
+        $manager->persist($amino);
+
+        $amino = new Amino();
+        $amino->setName("Proline");
+        $amino->setName1Letter('P');
+        $amino->setName3Letters('Pro');
+        $amino->setWeight1(115.13);
+        $amino->setWeight2(115.13);
+        $manager->persist($amino);
+
+        $amino = new Amino();
+        $amino->setName("Glutamine");
+        $amino->setName1Letter('Q');
+        $amino->setName3Letters('Gin');
+        $amino->setWeight1(146.15);
+        $amino->setWeight2(146.15);
+        $manager->persist($amino);
+
+        $amino = new Amino();
+        $amino->setName("Arginine");
+        $amino->setName1Letter('R');
+        $amino->setName3Letters('Arg');
+        $amino->setWeight1(174.21);
+        $amino->setWeight2(174.21);
+        $manager->persist($amino);
+
+        $amino = new Amino();
+        $amino->setName("Serine");
+        $amino->setName1Letter('S');
+        $amino->setName3Letters('Ser');
+        $amino->setWeight1(105.09);
+        $amino->setWeight2(105.09);
+        $manager->persist($amino);
+
+        $amino = new Amino();
+        $amino->setName("Threonine");
+        $amino->setName1Letter('T');
+        $amino->setName3Letters('Thr');
+        $amino->setWeight1(119.12);
+        $amino->setWeight2(119.12);
+        $manager->persist($amino);
+
+        $amino = new Amino();
+        $amino->setName("Selenocysteine");
+        $amino->setName1Letter('U');
+        $amino->setName3Letters('Sec');
+        $amino->setWeight1(168.05);
+        $amino->setWeight2(168.05);
+        $manager->persist($amino);
+
+        $amino = new Amino();
+        $amino->setName("Valine");
+        $amino->setName1Letter('V');
+        $amino->setName3Letters('Val');
+        $amino->setWeight1(117.15);
+        $amino->setWeight2(117.15);
+        $manager->persist($amino);
+
+        $amino = new Amino();
+        $amino->setName("Tryptophan");
+        $amino->setName1Letter('W');
+        $amino->setName3Letters('Trp');
+        $amino->setWeight1(204.22);
+        $amino->setWeight2(204.22);
+        $manager->persist($amino);
+
+        $amino = new Amino();
+        $amino->setName("Tyrosine");
+        $amino->setName1Letter('Y');
+        $amino->setName3Letters('Tyr');
+        $amino->setWeight1(181.19);
+        $amino->setWeight2(181.19);
+        $manager->persist($amino);
+
+        $amino = new Amino();
+        $amino->setName("Glutamate or glutamine");
+        $amino->setName1Letter('Z');
+        $amino->setName3Letters('N/A');
+        $amino->setWeight1(75.07);
+        $amino->setWeight2(204.22);
+        $manager->persist($amino);
+
+        $amino = new Amino();
+        $amino->setName("Any");
+        $amino->setName1Letter('X');
+        $amino->setName3Letters('XXX');
+        $amino->setWeight1(146.15);
+        $amino->setWeight2(146.15);
+        $manager->persist($amino);
+
+        $amino = new Amino();
+        $amino->setName("STOP");
+        $amino->setName1Letter('*');
+        $amino->setName3Letters('STP');
+        $amino->setWeight1(0);
+        $amino->setWeight2(0);
+        $manager->persist($amino);
+
+        $manager->flush();
+    }
+}
