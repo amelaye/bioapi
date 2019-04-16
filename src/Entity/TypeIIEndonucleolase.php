@@ -1,9 +1,10 @@
 <?php
 /**
- * Database of elements - TypeII Endonucleases
+ * Database of elements - TypeIIs Endonucleolases
  * Inspired by BioPHP's project biophp.org
- * Created 13 april 2019
- * Last modified 13 april 2019
+ * Created 15 april 2019
+ * Last modified 15 april 2019
+ * RIP Notre Dame de Paris is burning </3
  */
 namespace App\Entity;
 
@@ -12,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * Enzymes - TypeII Endonucleases
+ * Enzymes - TypeIIs Endonucleolases
  * @package App\Entity
  * @author Amélie DUVERNET akka Amelaye <amelieonline@gmail.com>
  * @ApiResource(
@@ -21,17 +22,17 @@ use Symfony\Component\Validator\Constraints as Assert;
  * )
  * @ORM\Entity
  */
-class TypeIIEndonuclease
+class TypeIIEndonucleolase
 {
     /**
-     * @var     string      First endonuclease of the list
+     * @var     string      First endonucleolase of the list
      * @ORM\Id
      * @ORM\Column(type="string")
      */
     private $id;
 
     /**
-     * @var     array       All endonucleases recognizing the same pattern
+     * @var     array       All endonucleolases recognizing the same pattern
      * @ORM\Column(type="array")
      */
     private $samePattern;

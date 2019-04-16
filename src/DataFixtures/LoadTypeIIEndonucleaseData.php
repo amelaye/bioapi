@@ -8,7 +8,7 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\TypeIIEndonuclease;
+use App\Entity\TypeIIEndonucleolase;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 
@@ -218,7 +218,7 @@ class LoadTypeIIEndonucleaseData extends Fixture
         );
 
         foreach ($aEnzymes as $key => $enzyme) {
-            $endonuclease = new TypeIIEndonuclease();
+            $endonuclease = new TypeIIEndonucleolase();
             $endonuclease->setId($key);
             $endonuclease->setSamePattern($enzyme[0]);
             $endonuclease->setRecognitionPattern($enzyme[1]);
