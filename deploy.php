@@ -34,7 +34,7 @@ host('production')
     ->hostname('amelieonline.net')
     ->user('deploy')
     ->set('deploy_path', '/home/web/{{application}}')
-    ->set('branch', 'master')
+    ->set('branch', 'develop')
     ->stage('prod');
     
 // Tasks
