@@ -8,15 +8,15 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\TypeIIbEndonucleolase;
+use App\Entity\TypeIIbEndonuclease;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 
-class LoadTypeIIbEndonucleolaseData extends Fixture
+class LoadTypeIIbEndonucleaseData extends Fixture
 {
     public function load(ObjectManager $manager)
     {
-        $endonuclease = new TypeIIbEndonucleolase();
+        $endonuclease = new TypeIIbEndonuclease();
         $endonuclease->setId("AjuI#");
         $endonuclease->setSamePattern(["AjuI"]);
         $endonuclease->setRecognitionPattern("_NNNNN'NNNNNNNGAANNNNNNNTTGGNNNNNN_NNNNN_'");
@@ -27,7 +27,7 @@ class LoadTypeIIbEndonucleolaseData extends Fixture
         $endonuclease->setNbNonNBases(7);
         $manager->persist($endonuclease);
 
-        $endonuclease = new TypeIIbEndonucleolase();
+        $endonuclease = new TypeIIbEndonuclease();
         $endonuclease->setId("AlfI#");
         $endonuclease->setSamePattern(["AjuI"]);
         $endonuclease->setRecognitionPattern("_NN'NNNNNNNNNNCGANNNNNNTGCNNNNNNNNNN_NN'");
@@ -38,7 +38,7 @@ class LoadTypeIIbEndonucleolaseData extends Fixture
         $endonuclease->setNbNonNBases(6);
         $manager->persist($endonuclease);
 
-        $endonuclease = new TypeIIbEndonucleolase();
+        $endonuclease = new TypeIIbEndonuclease();
         $endonuclease->setId("AloI#");
         $endonuclease->setSamePattern(["AloI"]);
         $endonuclease->setRecognitionPattern("_NNNNN'NNNNNNNGAACNNNNNNTCCNNNNNNN_NNNNN'");
@@ -49,7 +49,7 @@ class LoadTypeIIbEndonucleolaseData extends Fixture
         $endonuclease->setNbNonNBases(7);
         $manager->persist($endonuclease);
 
-        $endonuclease = new TypeIIbEndonucleolase();
+        $endonuclease = new TypeIIbEndonuclease();
         $endonuclease->setId("BaeI#");
         $endonuclease->setSamePattern(["BaeI"]);
         $endonuclease->setRecognitionPattern("_NNNNN'NNNNNNNNNNACNNNNGTAYCNNNNNNN_NNNNN'");
@@ -60,7 +60,7 @@ class LoadTypeIIbEndonucleolaseData extends Fixture
         $endonuclease->setNbNonNBases(7);
         $manager->persist($endonuclease);
 
-        $endonuclease = new TypeIIbEndonucleolase();
+        $endonuclease = new TypeIIbEndonuclease();
         $endonuclease->setId("BarI#");
         $endonuclease->setSamePattern(["BarI"]);
         $endonuclease->setRecognitionPattern("_NNNNN'NNNNNNNGAAGNNNNNNTACNNNNNNN_NNNNN'");
@@ -71,7 +71,7 @@ class LoadTypeIIbEndonucleolaseData extends Fixture
         $endonuclease->setNbNonNBases(7);
         $manager->persist($endonuclease);
 
-        $endonuclease = new TypeIIbEndonucleolase();
+        $endonuclease = new TypeIIbEndonuclease();
         $endonuclease->setId("BcgI#");
         $endonuclease->setSamePattern(["BcgI"]);
         $endonuclease->setRecognitionPattern("_NN'NNNNNNNNNNCGANNNNNNTGCNNNNNNNNNN_NN'");
@@ -82,7 +82,7 @@ class LoadTypeIIbEndonucleolaseData extends Fixture
         $endonuclease->setNbNonNBases(6);
         $manager->persist($endonuclease);
 
-        $endonuclease = new TypeIIbEndonucleolase();
+        $endonuclease = new TypeIIbEndonuclease();
         $endonuclease->setId("BdaI#");
         $endonuclease->setSamePattern(["BdaI"]);
         $endonuclease->setRecognitionPattern("_NN'NNNNNNNNNNTGANNNNNNTCANNNNNNNNNN_NN'");
@@ -93,7 +93,7 @@ class LoadTypeIIbEndonucleolaseData extends Fixture
         $endonuclease->setNbNonNBases(6);
         $manager->persist($endonuclease);
 
-        $endonuclease = new TypeIIbEndonucleolase();
+        $endonuclease = new TypeIIbEndonuclease();
         $endonuclease->setId("BplI#");
         $endonuclease->setSamePattern(["BplI"]);
         $endonuclease->setRecognitionPattern("_NNNNN'NNNNNNNNGAGNNNNNCTCNNNNNNNN_NNNNN'");
@@ -104,7 +104,7 @@ class LoadTypeIIbEndonucleolaseData extends Fixture
         $endonuclease->setNbNonNBases(6);
         $manager->persist($endonuclease);
 
-        $endonuclease = new TypeIIbEndonucleolase();
+        $endonuclease = new TypeIIbEndonuclease();
         $endonuclease->setId("BsaXI#");
         $endonuclease->setSamePattern(["BsaXI"]);
         $endonuclease->setRecognitionPattern("_NNN'NNNNNNNNNACNNNNNCTCCNNNNNNN_NNN'");
@@ -115,7 +115,7 @@ class LoadTypeIIbEndonucleolaseData extends Fixture
         $endonuclease->setNbNonNBases(6);
         $manager->persist($endonuclease);
 
-        $endonuclease = new TypeIIbEndonucleolase();
+        $endonuclease = new TypeIIbEndonuclease();
         $endonuclease->setId("CspCI#");
         $endonuclease->setSamePattern(["CspCI"]);
         $endonuclease->setRecognitionPattern("_NN'NNNNNNNNNNNCAANNNNNGTGGNNNNNNNNNN_NN'");
@@ -126,7 +126,7 @@ class LoadTypeIIbEndonucleolaseData extends Fixture
         $endonuclease->setNbNonNBases(7);
         $manager->persist($endonuclease);
 
-        $endonuclease = new TypeIIbEndonucleolase();
+        $endonuclease = new TypeIIbEndonuclease();
         $endonuclease->setId("FalI#");
         $endonuclease->setSamePattern(["FalI"]);
         $endonuclease->setRecognitionPattern("_NNNNN'NNNNNNNNAAGNNNNNCTTNNNNNNNN_NNNNN'");
@@ -137,7 +137,7 @@ class LoadTypeIIbEndonucleolaseData extends Fixture
         $endonuclease->setNbNonNBases(6);
         $manager->persist($endonuclease);
 
-        $endonuclease = new TypeIIbEndonucleolase();
+        $endonuclease = new TypeIIbEndonuclease();
         $endonuclease->setId("Hin4I#");
         $endonuclease->setSamePattern(["Hin4I"]);
         $endonuclease->setRecognitionPattern("_NNNNN'NNNNNNNNGAYNNNNNVTCNNNNNNNN_NNNNN'");
@@ -148,7 +148,7 @@ class LoadTypeIIbEndonucleolaseData extends Fixture
         $endonuclease->setNbNonNBases(6);
         $manager->persist($endonuclease);
 
-        $endonuclease = new TypeIIbEndonucleolase();
+        $endonuclease = new TypeIIbEndonuclease();
         $endonuclease->setId("PpiI#");
         $endonuclease->setSamePattern(["PpiI"]);
         $endonuclease->setRecognitionPattern("_NNNNN'NNNNNNNGAACNNNNNCTCNNNNNNNN_NNNNN'");
@@ -159,7 +159,7 @@ class LoadTypeIIbEndonucleolaseData extends Fixture
         $endonuclease->setNbNonNBases(7);
         $manager->persist($endonuclease);
 
-        $endonuclease = new TypeIIbEndonucleolase();
+        $endonuclease = new TypeIIbEndonuclease();
         $endonuclease->setId("PsrI#");
         $endonuclease->setSamePattern(["PsrI"]);
         $endonuclease->setRecognitionPattern("_NNNNN'NNNNNNNGAACNNNNNNTACNNNNNNN_NNNNN'");
@@ -170,7 +170,7 @@ class LoadTypeIIbEndonucleolaseData extends Fixture
         $endonuclease->setNbNonNBases(7);
         $manager->persist($endonuclease);
 
-        $endonuclease = new TypeIIbEndonucleolase();
+        $endonuclease = new TypeIIbEndonuclease();
         $endonuclease->setId("TstI#");
         $endonuclease->setSamePattern(["TstI"]);
         $endonuclease->setRecognitionPattern("_NNNNN'NNNNNNNNCACNNNNNNTCCNNNNNNN_NNNNN'");
