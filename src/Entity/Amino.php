@@ -33,7 +33,7 @@ class Amino
     /**
      * @var     string      Name of the amino
      *
-     * @ORM\Column
+     * @ORM\Column(type="string")
      * @Assert\NotBlank
      */
     private $name;
@@ -41,7 +41,7 @@ class Amino
     /**
      * @var     string      Name in 1 letter (A, L, S ...)
      *
-     * @ORM\Column
+     * @ORM\Column(type="string")
      * @Assert\NotBlank
      */
     private $name1Letter;
@@ -49,7 +49,7 @@ class Amino
     /**
      * @var string          Name in 3 letters (Ser, Leu ...)
      *
-     * @ORM\Column
+     * @ORM\Column(type="string")
      * @Assert\NotBlank
      */
     private $name3Letters;
@@ -57,7 +57,7 @@ class Amino
     /**
      * @var float
      *
-     * @ORM\Column
+     * @ORM\Column(type="decimal")
      * @Assert\NotBlank
      */
     private $weight1;
@@ -65,7 +65,7 @@ class Amino
     /**
      * @var float
      *
-     * @ORM\Column
+     * @ORM\Column(type="decimal")
      * @Assert\NotBlank
      */
     private $weight2;
@@ -73,7 +73,7 @@ class Amino
     /**
      * @var float
      *
-     * @ORM\Column(nullable=true)
+     * @ORM\Column(type="decimal", nullable=true)
      */
     private $residueMolWeight;
 
@@ -176,7 +176,7 @@ class Amino
     /**
      * @return float
      */
-    public function getResidueMolWeight(): float
+    public function getResidueMolWeight(): ?float
     {
         return $this->residueMolWeight;
     }
