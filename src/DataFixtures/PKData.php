@@ -17,7 +17,7 @@ class PKData extends Fixture
     public function load(ObjectManager $manager)
     {
         $pkValue = new PK();
-        $pkValue->setDataSource("EMBOSS");
+        $pkValue->setId("EMBOSS");
         $pkValue->setNTerminus(8.6);
         $pkValue->setK(10.8);
         $pkValue->setR(12.5);
@@ -30,7 +30,7 @@ class PKData extends Fixture
         $manager->persist($pkValue);
 
         $pkValue = new PK();
-        $pkValue->setDataSource("DTASelect");
+        $pkValue->setId("DTASelect");
         $pkValue->setNTerminus(8);
         $pkValue->setK(10);
         $pkValue->setR(12);
@@ -43,7 +43,7 @@ class PKData extends Fixture
         $manager->persist($pkValue);
 
         $pkValue = new PK();
-        $pkValue->setDataSource("Solomon");
+        $pkValue->setId("Solomon");
         $pkValue->setNTerminus(9.6);
         $pkValue->setK(10.5);
         $pkValue->setR(125);

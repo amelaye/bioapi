@@ -27,7 +27,7 @@ class PK
      * @ORM\Id
      * @ORM\Column(type="string")
      */
-    private $dataSource;
+    private $id;
 
     /**
      * @var     float
@@ -104,18 +104,19 @@ class PK
     /**
      * @return string
      */
-    public function getDataSource(): string
+    public function getId(): string
     {
-        return $this->dataSource;
+        return $this->id;
     }
 
     /**
-     * @param string $dataSource
+     * @param string $id
      */
-    public function setDataSource(string $dataSource): void
+    public function setId(string $id): void
     {
-        $this->dataSource = $dataSource;
+        $this->id = $id;
     }
+
 
     /**
      * @return float
