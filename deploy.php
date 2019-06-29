@@ -3,6 +3,8 @@ namespace Deployer;
 
 require 'recipe/symfony4.php';
 
+set('keep_releases', 3);
+
 // Project name
 set('application', 'api.amelayes-biophp.net');
 

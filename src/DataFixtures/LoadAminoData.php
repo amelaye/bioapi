@@ -22,6 +22,7 @@ class LoadAminoData extends Fixture
         $amino->setName3Letters('Ala');
         $amino->setWeight1(89.09);
         $amino->setWeight2(89.09);
+        $amino->setResidueMolWeight(71.07);
         $manager->persist($amino);
 
         $amino = new Amino();
@@ -38,6 +39,7 @@ class LoadAminoData extends Fixture
         $amino->setName3Letters('Cys');
         $amino->setWeight1(121.15);
         $amino->setWeight2(121.15);
+        $amino->setResidueMolWeight(103.10);
         $manager->persist($amino);
 
         $amino = new Amino();
@@ -46,6 +48,7 @@ class LoadAminoData extends Fixture
         $amino->setName3Letters('Asp');
         $amino->setWeight1(133.1);
         $amino->setWeight2(133.1);
+        $amino->setResidueMolWeight(115.08);
         $manager->persist($amino);
 
         $amino = new Amino();
@@ -54,6 +57,7 @@ class LoadAminoData extends Fixture
         $amino->setName3Letters('Glu');
         $amino->setWeight1(147.13);
         $amino->setWeight2(147.13);
+        $amino->setResidueMolWeight(129.11);
         $manager->persist($amino);
 
         $amino = new Amino();
@@ -62,6 +66,7 @@ class LoadAminoData extends Fixture
         $amino->setName3Letters('Phe');
         $amino->setWeight1(165.19);
         $amino->setWeight2(165.19);
+        $amino->setResidueMolWeight(147.17);
         $manager->persist($amino);
 
         $amino = new Amino();
@@ -70,6 +75,7 @@ class LoadAminoData extends Fixture
         $amino->setName3Letters('Gly');
         $amino->setWeight1(75.07);
         $amino->setWeight2(75.07);
+        $amino->setResidueMolWeight(57.05);
         $manager->persist($amino);
 
         $amino = new Amino();
@@ -78,6 +84,7 @@ class LoadAminoData extends Fixture
         $amino->setName3Letters('His');
         $amino->setWeight1(155.16);
         $amino->setWeight2(155.16);
+        $amino->setResidueMolWeight(137.14);
         $manager->persist($amino);
 
         $amino = new Amino();
@@ -86,6 +93,7 @@ class LoadAminoData extends Fixture
         $amino->setName3Letters('Ile');
         $amino->setWeight1(131.18);
         $amino->setWeight2(131.18);
+        $amino->setResidueMolWeight(113.15);
         $manager->persist($amino);
 
         $amino = new Amino();
@@ -94,6 +102,7 @@ class LoadAminoData extends Fixture
         $amino->setName3Letters('Lys');
         $amino->setWeight1(146.19);
         $amino->setWeight2(146.19);
+        $amino->setResidueMolWeight(128.17);
         $manager->persist($amino);
 
         $amino = new Amino();
@@ -102,6 +111,7 @@ class LoadAminoData extends Fixture
         $amino->setName3Letters('Leu');
         $amino->setWeight1(131.18);
         $amino->setWeight2(131.18);
+        $amino->setResidueMolWeight(113.15);
         $manager->persist($amino);
 
         $amino = new Amino();
@@ -110,6 +120,7 @@ class LoadAminoData extends Fixture
         $amino->setName3Letters('Met');
         $amino->setWeight1(149.22);
         $amino->setWeight2(149.22);
+        $amino->setResidueMolWeight(131.19);
         $manager->persist($amino);
 
         $amino = new Amino();
@@ -118,6 +129,7 @@ class LoadAminoData extends Fixture
         $amino->setName3Letters('Asn');
         $amino->setWeight1(132.12);
         $amino->setWeight2(132.12);
+        $amino->setResidueMolWeight(114.08);
         $manager->persist($amino);
 
         $amino = new Amino();
@@ -134,6 +146,7 @@ class LoadAminoData extends Fixture
         $amino->setName3Letters('Pro');
         $amino->setWeight1(115.13);
         $amino->setWeight2(115.13);
+        $amino->setResidueMolWeight(97.11);
         $manager->persist($amino);
 
         $amino = new Amino();
@@ -142,6 +155,7 @@ class LoadAminoData extends Fixture
         $amino->setName3Letters('Gin');
         $amino->setWeight1(146.15);
         $amino->setWeight2(146.15);
+        $amino->setResidueMolWeight(128.13);
         $manager->persist($amino);
 
         $amino = new Amino();
@@ -150,6 +164,7 @@ class LoadAminoData extends Fixture
         $amino->setName3Letters('Arg');
         $amino->setWeight1(174.21);
         $amino->setWeight2(174.21);
+        $amino->setResidueMolWeight(156.18);
         $manager->persist($amino);
 
         $amino = new Amino();
@@ -158,6 +173,7 @@ class LoadAminoData extends Fixture
         $amino->setName3Letters('Ser');
         $amino->setWeight1(105.09);
         $amino->setWeight2(105.09);
+        $amino->setResidueMolWeight(87.07);
         $manager->persist($amino);
 
         $amino = new Amino();
@@ -166,6 +182,7 @@ class LoadAminoData extends Fixture
         $amino->setName3Letters('Thr');
         $amino->setWeight1(119.12);
         $amino->setWeight2(119.12);
+        $amino->setResidueMolWeight(101.10);
         $manager->persist($amino);
 
         $amino = new Amino();
@@ -182,6 +199,7 @@ class LoadAminoData extends Fixture
         $amino->setName3Letters('Val');
         $amino->setWeight1(117.15);
         $amino->setWeight2(117.15);
+        $amino->setResidueMolWeight(99.13);
         $manager->persist($amino);
 
         $amino = new Amino();
@@ -190,6 +208,7 @@ class LoadAminoData extends Fixture
         $amino->setName3Letters('Trp');
         $amino->setWeight1(204.22);
         $amino->setWeight2(204.22);
+        $amino->setResidueMolWeight(186.20);
         $manager->persist($amino);
 
         $amino = new Amino();
@@ -198,6 +217,7 @@ class LoadAminoData extends Fixture
         $amino->setName3Letters('Tyr');
         $amino->setWeight1(181.19);
         $amino->setWeight2(181.19);
+        $amino->setResidueMolWeight(163.17);
         $manager->persist($amino);
 
         $amino = new Amino();
@@ -214,6 +234,7 @@ class LoadAminoData extends Fixture
         $amino->setName3Letters('XXX');
         $amino->setWeight1(146.15);
         $amino->setWeight2(146.15);
+        $amino->setResidueMolWeight(114.822);
         $manager->persist($amino);
 
         $amino = new Amino();

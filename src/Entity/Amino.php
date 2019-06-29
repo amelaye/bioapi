@@ -71,6 +71,14 @@ class Amino
     private $weight2;
 
     /**
+     * @var float
+     *
+     * @ORM\Column
+     * @Assert\IsNull
+     */
+    private $residueMolWeight;
+
+    /**
      * @return int
      */
     public function getId(): int
@@ -164,5 +172,21 @@ class Amino
     public function setWeight2(float $weight2): void
     {
         $this->weight2 = $weight2;
+    }
+
+    /**
+     * @return float
+     */
+    public function getResidueMolWeight(): float
+    {
+        return $this->residueMolWeight;
+    }
+
+    /**
+     * @param float $residueMolWeight
+     */
+    public function setResidueMolWeight(float $residueMolWeight): void
+    {
+        $this->residueMolWeight = $residueMolWeight;
     }
 }

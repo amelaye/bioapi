@@ -12,7 +12,7 @@ use App\Entity\PK;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 
-class PKData extends Fixture
+class LoadPKData extends Fixture
 {
     public function load(ObjectManager $manager)
     {
