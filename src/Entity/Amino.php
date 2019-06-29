@@ -73,8 +73,7 @@ class Amino
     /**
      * @var float
      *
-     * @ORM\Column
-     * @Assert\IsNull
+     * @ORM\Column(nullable=true)
      */
     private $residueMolWeight;
 
