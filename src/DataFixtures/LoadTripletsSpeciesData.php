@@ -8,7 +8,7 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\TripletSpecies;
+use App\Entity\TripletSpecie;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 
@@ -440,28 +440,28 @@ class LoadTripletsSpeciesData extends Fixture
             '(\S\S\S )'
         ];
 
-        $triplet = new TripletSpecies();
+        $triplet = new TripletSpecie();
         $triplet->setNature("standard");
         $triplet->setTripletsGroups($triplets_standard);
         $triplet->setTriplets(["TTY","YTN","ATH","ATG","GTN","WSN","CCN","ACN","GCN","TAY","TRR",
             "CAY","CAR","AAY","AAR","GAY","GAR","TGY","TGG","MGN","GGN","NNN"]);
         $manager->persist($triplet);
 
-        $triplet = new TripletSpecies();
+        $triplet = new TripletSpecie();
         $triplet->setNature("vertebrate mitochondrial");
         $triplet->setTripletsGroups($triplets_vertebrate_mitochondrial);
         $triplet->setTriplets(["TTY","YTN","ATY","ATR","GTN","WSN","CCN","ACN","GCN","TAY","WRR",
             "CAY","CAR","AAY","AAR","GAY","GAR","TGY","TGR","CGN","GGN","NNN"]);
         $manager->persist($triplet);
 
-        $triplet = new TripletSpecies();
+        $triplet = new TripletSpecie();
         $triplet->setNature("yeast mitochondrial");
         $triplet->setTripletsGroups($triplets_yeast_mitochondrial);
         $triplet->setTriplets(["TTY","TTR","ATY","ATR","GTN","WSN","CCN","MYN","GCN","TAY","TAR","CAY",
             "CAR","AAY","AAR","GAY","GAR","TGY","TGR","MGN","GGN","NNN"]);
         $manager->persist($triplet);
 
-        $triplet = new TripletSpecies();
+        $triplet = new TripletSpecie();
         $triplet->setNature("mold protozoan coelenterate mitochondrial");
         $triplet->setTripletsGroups($triplets_mold_protozoan_coelenterate_mitochondrial);
         $triplet->setTriplets(["TTY","YTN","ATH","ATG","GTN","WSN","CCN","ACN",
@@ -469,14 +469,14 @@ class LoadTripletsSpeciesData extends Fixture
             "GAR","TGY","TGR","MGN","GGN","NNN"]);
         $manager->persist($triplet);
 
-        $triplet = new TripletSpecies();
+        $triplet = new TripletSpecie();
         $triplet->setNature("invertebrate mitochondrial");
         $triplet->setTripletsGroups($triplets_invertebrate_mitochondrial);
         $triplet->setTriplets(["TTY","YTN","ATY","ATR","GTN","WSN","CCN","WSN","GCN","TAY","TAR",
             "CAY","CAR","AAY","AAR","GAY","GAR","TGY","TGR","CGN","GGN","NNN"]);
         $manager->persist($triplet);
 
-        $triplet = new TripletSpecies();
+        $triplet = new TripletSpecie();
         $triplet->setNature("ciliate dasycladacean hexamita nuclear");
         $triplet->setTripletsGroups($triplets_ciliate_dasycladacean_hexamita_nuclear);
         $triplet->setTriplets(["TTY","YTN","ATH","ATG","GTN","WSN","CCN","ACN","GCN",
@@ -484,69 +484,69 @@ class LoadTripletsSpeciesData extends Fixture
             "TGG","MGN","GGN","NNN"]);
         $manager->persist($triplet);
 
-        $triplet = new TripletSpecies();
+        $triplet = new TripletSpecie();
         $triplet->setNature("echinoderm mitochondrial");
         $triplet->setTripletsGroups($triplets_echinoderm_mitochondrial);
         $triplet->setTriplets(["TTY","YTN","ATH","ATG","GTN","WSN","CCN","WCN","GCN","TAY","TAR",
             "CAY","CAR","AAH","AAG","GAY","GAR","TGY","TGR","CGN","GGN","NNN"]);
         $manager->persist($triplet);
 
-        $triplet = new TripletSpecies();
+        $triplet = new TripletSpecie();
         $triplet->setNature("euplotid nuclear");
         $triplet->setTripletsGroups($triplets_euplotid_nuclear);
         $triplet->setTriplets(["TTY","YTN","ATH","ATG","GTN","WSN","CCN","ACN","GCN","TAY","TAR","CAY","CAR",
             "AAY","AAR","GAY","GAR","TGH","TGG","MGN","GGN","NNN"]);
         $manager->persist($triplet);
 
-        $triplet = new TripletSpecies();
+        $triplet = new TripletSpecie();
         $triplet->setNature("bacterial plant plastid");
         $triplet->setTripletsGroups($triplets_bacterial_plant_plastid);
         $triplet->setTriplets(["TTY","YTN","ATH","ATG","GTN","WSN","CCN","ACN","GCN","TAY","TRR",
             "CAY","CAR","AAY","AAR","GAY","GAR","TGY","TGG","MGN","GGN","NNN"]);
         $manager->persist($triplet);
 
-        $triplet = new TripletSpecies();
+        $triplet = new TripletSpecie();
         $triplet->setNature("alternative yeast nuclear");
         $triplet->setTripletsGroups($triplets_alternative_yeast_nuclear);
         $triplet->setTriplets(["TTY","YTN","ATH","ATG","GTN","HBN","CCN","ACN","GCN","TAY","TRR",
             "CAY","CAR","AAY","AAR","GAY","GAR","TGY","TGG","MGN","GGN","NNN"]);
         $manager->persist($triplet);
 
-        $triplet = new TripletSpecies();
+        $triplet = new TripletSpecie();
         $triplet->setNature("ascidian mitochondria");
         $triplet->setTripletsGroups($triplets_ascidian_mitochondria);
         $triplet->setTriplets(["TTY","YTN","ATY","ATR","GTN","WSN","CCN","ACN","GCN","TAY","TAR","CAY",
             "CAR","AAY","AAR","GAY","GAR","TGY","TGR","CGN","RGN","NNN"]);
         $manager->persist($triplet);
 
-        $triplet = new TripletSpecies();
+        $triplet = new TripletSpecie();
         $triplet->setNature("flatworm mitochondrial");
         $triplet->setTripletsGroups($triplets_flatworm_mitochondrial);
         $triplet->setTriplets(["TTY","YTN","ATH","ATG","GTN","WSN","CCN","ACN","GCN","TAH","TAG","CAY",
             "CAR","ATH","AAG","GAY","GAR","TGY","TGR","CGN","GGN","NNN"]);
         $manager->persist($triplet);
 
-        $triplet = new TripletSpecies();
+        $triplet = new TripletSpecie();
         $triplet->setNature("blepharisma macronuclear");
         $triplet->setTripletsGroups($triplets_blepharisma_macronuclear);
         $triplet->setTriplets(["TTY","YTN","ATH","ATG","GTN","WSN","CCN","ACN","GCN","TAY","TRA","CAY",
             "YAR","AAY","AAR","GAY","GAR","TGY","TGG","MGN","GGN","NNN"]);
         $manager->persist($triplet);
 
-        $triplet = new TripletSpecies();
+        $triplet = new TripletSpecie();
         $triplet->setNature("chlorophycean mitochondrial");
         $triplet->setTripletsGroups($triplets_chlorophycean_mitochondrial);
         $triplet->setTriplets(["TTY","YWN","ATH","ATG","GTN","WSN","CCN","ACN","GCN","TAY","TRA",
             "CAY","CAR","AAY","AAR","GAY","GAR","TGY","TGG","MGN","GGN","NNN"]);
         $manager->persist($triplet);
 
-        $triplet = new TripletSpecies();
+        $triplet = new TripletSpecie();
         $triplet->setNature("trematode mitochondrial");
         $triplet->setTripletsGroups($triplets_trematode_mitochondrial);
         $triplet->setTriplets(["TTY","YTN","ATY","ATR","GTN","WSN","CCN","ACN","GCN","TAY","TAR","CAY",
             "CAR","AAH","AAG","GAY","GAR","TGY","TGR","CGN","GGN","NNN"]);
 
-        $triplet = new TripletSpecies();
+        $triplet = new TripletSpecie();
         $triplet->setNature("scenedesmus obliquus mitochondrial");
         $triplet->setTripletsGroups($triplets_scenedesmus_obliquus_mitochondrial);
         $triplet->setTriplets(["TTY","YWN","ATH","ATG","GTN","WSB","CCN","ACN","GCN","TAY",
@@ -554,7 +554,7 @@ class LoadTripletsSpeciesData extends Fixture
             "GGN","NNN"]);
         $manager->persist($triplet);
 
-        $triplet = new TripletSpecies();
+        $triplet = new TripletSpecie();
         $triplet->setNature("thraustochytrium mitochondrial code");
         $triplet->setTripletsGroups($triplets_thraustochytrium_mitochondrial_code);
         $triplet->setTriplets(["TTY","YTN","ATH","ATG","GTN","WSN","CCN","ACN","GCN","TAY",

@@ -16,7 +16,8 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @ApiResource(
  *     collectionOperations={"get"},
- *     itemOperations={"get, post"})
+ *     itemOperations={"get"}
+ * )
  * @ORM\Entity
  */
 class TripletSpecie
