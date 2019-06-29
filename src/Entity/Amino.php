@@ -22,11 +22,10 @@ use Symfony\Component\Validator\Constraints as Assert;
 class Amino
 {
     /**
-     * @var     int         Id of the amino acid (auto-increment)
+     * @var     string         Id of the amino acid (auto-increment)
      *
      * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string")
      */
     private $id;
 
@@ -78,17 +77,17 @@ class Amino
     private $residueMolWeight;
 
     /**
-     * @return int
+     * @return string
      */
-    public function getId(): int
+    public function getId(): string
     {
         return $this->id;
     }
 
     /**
-     * @param int $id
+     * @param string $id
      */
-    public function setId(int $id): void
+    public function setId(string $id): void
     {
         $this->id = $id;
     }
