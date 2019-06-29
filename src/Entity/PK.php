@@ -22,21 +22,12 @@ use Symfony\Component\Validator\Constraints as Assert;
 class PK
 {
     /**
-     * @var     int         Id of the row
+     * @var     string       Id of the row (EMBOSS ...)
      *
      * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string")
      */
-    private $id;
-
-    /**
-     * @var     string      Name of the software
-     *
-     * @ORM\Column
-     * @Assert\NotBlank
-     */
-    private $software;
+    private $dataSource;
 
     /**
      * @var     float
@@ -111,35 +102,19 @@ class PK
     private $y;
 
     /**
-     * @return int
-     */
-    public function getId(): int
-    {
-        return $this->id;
-    }
-
-    /**
-     * @param int $id
-     */
-    public function setId(int $id): void
-    {
-        $this->id = $id;
-    }
-
-    /**
      * @return string
      */
-    public function getSoftware(): string
+    public function getDataSource(): string
     {
-        return $this->software;
+        return $this->dataSource;
     }
 
     /**
-     * @param string $software
+     * @param string $dataSource
      */
-    public function setSoftware(string $software): void
+    public function setDataSource(string $dataSource): void
     {
-        $this->software = $software;
+        $this->dataSource = $dataSource;
     }
 
     /**
