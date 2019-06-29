@@ -12,14 +12,14 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * Database of elements - PK Values
+ * Database of elements - Triplets ans Species
  *
  * @ApiResource(
  *     collectionOperations={"get"},
  *     itemOperations={"get, post"})
  * @ORM\Entity
  */
-class TripletSpecies
+class TripletSpecie
 {
     /**
      * @var     int     The id (auto-increment)
