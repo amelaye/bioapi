@@ -72,7 +72,7 @@ class Amino
     /**
      * @var float
      *
-     * @ORM\Column(type="decimal", nullable=true)
+     * @ORM\Column(type="decimal", precision=5, scale=2, nullable=true)
      */
     private $residueMolWeight;
 
