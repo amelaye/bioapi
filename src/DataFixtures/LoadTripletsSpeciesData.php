@@ -545,6 +545,7 @@ class LoadTripletsSpeciesData extends Fixture
         $triplet->setTripletsGroups($triplets_trematode_mitochondrial);
         $triplet->setTriplets(["TTY","YTN","ATY","ATR","GTN","WSN","CCN","ACN","GCN","TAY","TAR","CAY",
             "CAR","AAH","AAG","GAY","GAR","TGY","TGR","CGN","GGN","NNN"]);
+        $manager->persist($triplet);
 
         $triplet = new TripletSpecie();
         $triplet->setNature("scenedesmus obliquus mitochondrial");
