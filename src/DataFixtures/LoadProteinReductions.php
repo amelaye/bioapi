@@ -720,5 +720,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setPattern("/N|H|Q|E|D|R|K/");
         $reduction->setReduction("e");
         $manager->persist($reduction);
+
+        $manager->flush();
     }
 }
