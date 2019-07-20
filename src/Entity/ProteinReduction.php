@@ -54,7 +54,6 @@ class ProteinReduction
     /**
      * @var     string  Nature of the pattern (Aliphatic, Aromatic ...)
      * @ORM\Column(nullable=true)
-     * @Assert\NotBlank
      */
     private $nature;
 
@@ -132,7 +131,7 @@ class ProteinReduction
     /**
      * @return string
      */
-    public function getNature(): string
+    public function getNature(): ?string
     {
         return $this->nature;
     }
