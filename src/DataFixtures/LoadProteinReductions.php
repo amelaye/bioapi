@@ -404,7 +404,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setAlphabet("Murphy15");
         $reduction->setLetters("LCAGSTPFWEDNQKH");
         $reduction->setPattern("F|Y");
-        $reduction->setNature("Hydrophobic/aromatic sidechains");
+        $reduction->setNature("F: Hydrophobic/aromatic sidechains");
         $reduction->setReduction("f");
         $reduction->setDescription("Murphy et al, 2000; 15 letters alphabet");
         $manager->persist($reduction);
@@ -458,7 +458,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setAlphabet("Murphy15");
         $reduction->setLetters("LCAGSTPFWEDNQKH");
         $reduction->setPattern("K|R");
-        $reduction->setNature("Long-chain positively charged");
+        $reduction->setNature("K: Long-chain positively charged");
         $reduction->setReduction("k");
         $reduction->setDescription("Murphy et al, 2000; 15 letters alphabet");
         $manager->persist($reduction);
