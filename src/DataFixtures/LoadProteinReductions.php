@@ -16,11 +16,10 @@ class LoadProteinReductions extends Fixture
 {
     public function load(ObjectManager $manager)
     {
-        $reduction = new ProteinReduction();
-
         /**
          * 2
          */
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet(2);
         $reduction->setLetters("PH");
         $reduction->setPattern("/A|G|T|S|N|Q|D|E|H|R|K|P/");
@@ -28,6 +27,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setReduction("p");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet(2);
         $reduction->setLetters("PH");
         $reduction->setPattern("/C|M|F|I|L|V|W|Y/");
@@ -39,6 +39,7 @@ class LoadProteinReductions extends Fixture
         /**
          * 5
          */
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet(5);
         $reduction->setLetters("ARCTD");
         $reduction->setPattern("/I|V|L/");
@@ -46,6 +47,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setReduction("a");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet(5);
         $reduction->setLetters("ARCTD");
         $reduction->setPattern("/F|Y|W|H/");
@@ -53,6 +55,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setReduction("r");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet(5);
         $reduction->setLetters("ARCTD");
         $reduction->setPattern("/K|R|D|E/");
@@ -60,6 +63,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setReduction("c");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet(5);
         $reduction->setLetters("ARCTD");
         $reduction->setPattern("/G|A|C|S/");
@@ -67,6 +71,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setReduction("t");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet(5);
         $reduction->setLetters("ARCTD");
         $reduction->setPattern("/T|M|Q|N|P/");
@@ -77,6 +82,7 @@ class LoadProteinReductions extends Fixture
         /**
          * 6
          */
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet(6);
         $reduction->setLetters("ARPNTD");
         $reduction->setPattern("/I|V|L/");
@@ -84,6 +90,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setReduction("a");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet(6);
         $reduction->setLetters("ARPNTD");
         $reduction->setPattern("/F|Y|W|H/");
@@ -91,6 +98,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setReduction("r");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet(6);
         $reduction->setLetters("ARPNTD");
         $reduction->setPattern("/K|R/");
@@ -98,6 +106,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setReduction("p");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet(6);
         $reduction->setLetters("ARPNTD");
         $reduction->setPattern("/D|E/");
@@ -105,6 +114,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setReduction("n");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet(6);
         $reduction->setLetters("ARPNTD");
         $reduction->setPattern("/G|A|C|S/");
@@ -112,6 +122,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setReduction("t");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet(6);
         $reduction->setLetters("ARPNTD");
         $reduction->setPattern("/T|M|Q|N|P/");
@@ -122,6 +133,7 @@ class LoadProteinReductions extends Fixture
         /**
          * 3IMG
          */
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("3IMG");
         $reduction->setLetters("PNH");
         $reduction->setPattern("/D|N|E|Q|K|R/");
@@ -129,6 +141,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setReduction("p");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("3IMG");
         $reduction->setLetters("PNH");
         $reduction->setPattern("/G|T|S|Y|P|M/");
@@ -136,6 +149,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setReduction("n");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("3IMG");
         $reduction->setLetters("PNH");
         $reduction->setPattern("/I|V|L|F|C|M|A|W/");
@@ -146,6 +160,7 @@ class LoadProteinReductions extends Fixture
         /**
          * 5IMG
          */
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("5IMG");
         $reduction->setLetters("GCEMF");
         $reduction->setPattern("/G|A|S/");
@@ -153,6 +168,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setReduction("g");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("5IMG");
         $reduction->setLetters("GCEMF");
         $reduction->setPattern("/C|D|P|N|T/");
@@ -160,6 +176,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setReduction("c");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("5IMG");
         $reduction->setLetters("GCEMF");
         $reduction->setPattern("/E|V|Q|H/");
@@ -167,6 +184,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setReduction("e");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("5IMG");
         $reduction->setLetters("GCEMF");
         $reduction->setPattern("/M|I|L|K|R/");
@@ -174,6 +192,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setReduction("m");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("5IMG");
         $reduction->setLetters("GCEMF");
         $reduction->setPattern("/F|Y|W/");
@@ -185,6 +204,7 @@ class LoadProteinReductions extends Fixture
         /**
          * 11IMG
          */
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("11IMG");
         $reduction->setLetters("AFCGSWYPDNH");
         $reduction->setPattern("/A|V|I|L/");
@@ -192,6 +212,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setReduction("a");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("11IMG");
         $reduction->setLetters("AFCGSWYPDNH");
         $reduction->setPattern("/F/");
@@ -199,6 +220,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setReduction("f");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("11IMG");
         $reduction->setLetters("AFCGSWYPDNH");
         $reduction->setPattern("/C|M/");
@@ -206,6 +228,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setReduction("c");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("11IMG");
         $reduction->setLetters("AFCGSWYPDNH");
         $reduction->setPattern("/G/");
@@ -213,6 +236,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setReduction("g");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("11IMG");
         $reduction->setLetters("AFCGSWYPDNH");
         $reduction->setPattern("/S|T/");
@@ -220,6 +244,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setReduction("s");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("11IMG");
         $reduction->setLetters("AFCGSWYPDNH");
         $reduction->setPattern("/W/");
@@ -227,6 +252,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setReduction("w");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("11IMG");
         $reduction->setLetters("AFCGSWYPDNH");
         $reduction->setPattern("/Y/");
@@ -234,6 +260,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setReduction("y");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("11IMG");
         $reduction->setLetters("AFCGSWYPDNH");
         $reduction->setPattern("/P/");
@@ -241,6 +268,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setReduction("p");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("11IMG");
         $reduction->setLetters("AFCGSWYPDNH");
         $reduction->setPattern("/D|E/");
@@ -248,6 +276,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setReduction("d");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("11IMG");
         $reduction->setLetters("AFCGSWYPDNH");
         $reduction->setPattern("/N|Q/");
@@ -255,6 +284,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setReduction("n");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("11IMG");
         $reduction->setLetters("AFCGSWYPDNH");
         $reduction->setPattern("/H|K|R/");
@@ -266,6 +296,7 @@ class LoadProteinReductions extends Fixture
         /**
          * Murphy15
          */
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy15");
         $reduction->setLetters("LCAGSTPFWEDNQKH");
         $reduction->setPattern("/L|V|I|M/");
@@ -273,42 +304,49 @@ class LoadProteinReductions extends Fixture
         $reduction->setReduction("l");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy15");
         $reduction->setLetters("LCAGSTPFWEDNQKH");
         $reduction->setPattern("/C/");
         $reduction->setReduction("c");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy15");
         $reduction->setLetters("LCAGSTPFWEDNQKH");
         $reduction->setPattern("/A/");
         $reduction->setReduction("a");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy15");
         $reduction->setLetters("LCAGSTPFWEDNQKH");
         $reduction->setPattern("/G/");
         $reduction->setReduction("g");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy15");
         $reduction->setLetters("LCAGSTPFWEDNQKH");
         $reduction->setPattern("/S/");
         $reduction->setReduction("s");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy15");
         $reduction->setLetters("LCAGSTPFWEDNQKH");
         $reduction->setPattern("/T/");
         $reduction->setReduction("t");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy15");
         $reduction->setLetters("LCAGSTPFWEDNQKH");
         $reduction->setPattern("/P/");
         $reduction->setReduction("p");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy15");
         $reduction->setLetters("LCAGSTPFWEDNQKH");
         $reduction->setPattern("/F|Y/");
@@ -316,36 +354,42 @@ class LoadProteinReductions extends Fixture
         $reduction->setReduction("f");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy15");
         $reduction->setLetters("LCAGSTPFWEDNQKH");
         $reduction->setPattern("/W/");
         $reduction->setReduction("w");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy15");
         $reduction->setLetters("LCAGSTPFWEDNQKH");
         $reduction->setPattern("/E/");
         $reduction->setReduction("e");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy15");
         $reduction->setLetters("LCAGSTPFWEDNQKH");
         $reduction->setPattern("/D/");
         $reduction->setReduction("d");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy15");
         $reduction->setLetters("LCAGSTPFWEDNQKH");
         $reduction->setPattern("/N/");
         $reduction->setReduction("n");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy15");
         $reduction->setLetters("LCAGSTPFWEDNQKH");
         $reduction->setPattern("/Q/");
         $reduction->setReduction("q");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy15");
         $reduction->setLetters("LCAGSTPFWEDNQKH");
         $reduction->setPattern("/K|R/");
@@ -353,6 +397,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setReduction("k");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy15");
         $reduction->setLetters("LCAGSTPFWEDNQKH");
         $reduction->setPattern("/H/");
@@ -362,6 +407,7 @@ class LoadProteinReductions extends Fixture
         /**
          * Murphy10
          */
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy10");
         $reduction->setLetters("LCAGSPFEKH");
         $reduction->setPattern("/L|V|I|M/");
@@ -369,24 +415,28 @@ class LoadProteinReductions extends Fixture
         $reduction->setReduction("l");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy10");
         $reduction->setLetters("LCAGSPFEKH");
         $reduction->setPattern("/C/");
         $reduction->setReduction("c");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy10");
         $reduction->setLetters("LCAGSPFEKH");
         $reduction->setPattern("/A/");
         $reduction->setReduction("a");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy10");
         $reduction->setLetters("LCAGSPFEKH");
         $reduction->setPattern("/G/");
         $reduction->setReduction("g");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy10");
         $reduction->setLetters("LCAGSPFEKH");
         $reduction->setPattern("/S|T/");
@@ -394,12 +444,14 @@ class LoadProteinReductions extends Fixture
         $reduction->setReduction("s");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy10");
         $reduction->setLetters("LCAGSPFEKH");
         $reduction->setPattern("/P/");
         $reduction->setReduction("p");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy10");
         $reduction->setLetters("LCAGSPFEKH");
         $reduction->setPattern("/F|Y|W/");
@@ -407,6 +459,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setReduction("f");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy10");
         $reduction->setLetters("LCAGSPFEKH");
         $reduction->setPattern("/E|D|N|Q/");
@@ -414,6 +467,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setReduction("e");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy10");
         $reduction->setLetters("LCAGSPFEKH");
         $reduction->setPattern("/K|R/");
@@ -421,6 +475,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setReduction("k");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy10");
         $reduction->setLetters("LCAGSPFEKH");
         $reduction->setPattern("/H/");
@@ -430,6 +485,7 @@ class LoadProteinReductions extends Fixture
         /**
          * Murphy 4
          */
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy4");
         $reduction->setLetters("LAFE");
         $reduction->setPattern("/L|V|I|M|C/");
@@ -437,12 +493,14 @@ class LoadProteinReductions extends Fixture
         $reduction->setReduction("l");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy4");
         $reduction->setLetters("LAFE");
         $reduction->setPattern("/A|G|S|T|P/");
         $reduction->setReduction("a");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy4");
         $reduction->setLetters("LAFE");
         $reduction->setPattern("/F|Y|W/");
@@ -450,6 +508,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setReduction("f");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy4");
         $reduction->setLetters("LAFE");
         $reduction->setPattern("/E|D|N|Q|K|R|H/");
@@ -460,6 +519,7 @@ class LoadProteinReductions extends Fixture
         /**
          * Murphy 2
          */
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy2");
         $reduction->setLetters("PE");
         $reduction->setPattern("/L|V|I|M|C|A|G|S|T|P|F|Y|W/");
@@ -467,6 +527,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setReduction("p");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy2");
         $reduction->setLetters("PE");
         $reduction->setPattern("/E|D|N|Q|K|R|H/");
@@ -478,30 +539,35 @@ class LoadProteinReductions extends Fixture
         /**
          * Wang 5
          */
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Wang5");
         $reduction->setLetters("IAGEK");
         $reduction->setPattern("/C|M|F|I|L|V|W|Y/");
         $reduction->setReduction("i");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Wang5");
         $reduction->setLetters("IAGEK");
         $reduction->setPattern("/A|T|H/");
         $reduction->setReduction("a");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Wang5");
         $reduction->setLetters("IAGEK");
         $reduction->setPattern("/G|P/");
         $reduction->setReduction("g");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Wang5");
         $reduction->setLetters("IAGEK");
         $reduction->setPattern("/D|E/");
         $reduction->setReduction("e");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Wang5");
         $reduction->setLetters("IAGEK");
         $reduction->setPattern("/S|N|Q|R|K/");
@@ -511,30 +577,35 @@ class LoadProteinReductions extends Fixture
         /**
          * WANG 5V
          */
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Wang5v");
         $reduction->setLetters("ILAEK");
         $reduction->setPattern("/C|M|F|I/");
         $reduction->setReduction("i");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Wang5v");
         $reduction->setLetters("ILAEK");
         $reduction->setPattern("/L|V|W|Y/");
         $reduction->setReduction("l");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Wang5v");
         $reduction->setLetters("ILAEK");
         $reduction->setPattern("/A|T|G|S/");
         $reduction->setReduction("a");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Wang5v");
         $reduction->setLetters("ILAEK");
         $reduction->setPattern("/N|Q|D|E/");
         $reduction->setReduction("e");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Wang5v");
         $reduction->setLetters("ILAEK");
         $reduction->setPattern("/H|P|R|K/");
@@ -544,18 +615,21 @@ class LoadProteinReductions extends Fixture
         /**
          * Wang3
          */
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Wang3");
         $reduction->setLetters("IAE");
         $reduction->setPattern("/C|M|F|I|L|V|W|Y/");
         $reduction->setReduction("i");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Wang3");
         $reduction->setLetters("IAE");
         $reduction->setPattern("/A|T|H|G|P|R/");
         $reduction->setReduction("e");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Wang3");
         $reduction->setLetters("IAE");
         $reduction->setPattern("/D|E|S|N|Q|K/");
@@ -565,12 +639,14 @@ class LoadProteinReductions extends Fixture
         /**
          * Wang 2
          */
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Wang2");
         $reduction->setLetters("IA");
         $reduction->setPattern("/C|M|F|I|L|V|W|Y/");
         $reduction->setReduction("i");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Wang2");
         $reduction->setLetters("IA");
         $reduction->setPattern("/A|T|H|G|P|R|D|E|S|N|Q|K/");
@@ -580,60 +656,70 @@ class LoadProteinReductions extends Fixture
         /**
          * Li10
          */
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Li10");
         $reduction->setLetters("CYLVGPSNEK");
         $reduction->setPattern("/C/");
         $reduction->setReduction("c");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Li10");
         $reduction->setLetters("CYLVGPSNEK");
         $reduction->setPattern("/F|Y|W/");
         $reduction->setReduction("y");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Li10");
         $reduction->setLetters("CYLVGPSNEK");
         $reduction->setPattern("/M|L/");
         $reduction->setReduction("l");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Li10");
         $reduction->setLetters("CYLVGPSNEK");
         $reduction->setPattern("/I|V/");
         $reduction->setReduction("v");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Li10");
         $reduction->setLetters("CYLVGPSNEK");
         $reduction->setPattern("/G/");
         $reduction->setReduction("g");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Li10");
         $reduction->setLetters("CYLVGPSNEK");
         $reduction->setPattern("/P/");
         $reduction->setReduction("p");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Li10");
         $reduction->setLetters("CYLVGPSNEK");
         $reduction->setPattern("/A|T|S/");
         $reduction->setReduction("s");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Li10");
         $reduction->setLetters("CYLVGPSNEK");
         $reduction->setPattern("/N|H/");
         $reduction->setReduction("n");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Li10");
         $reduction->setLetters("CYLVGPSNEK");
         $reduction->setPattern("/Q|E|D/");
         $reduction->setReduction("e");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Li10");
         $reduction->setLetters("CYLVGPSNEK");
         $reduction->setPattern("/R|K/");
@@ -643,30 +729,35 @@ class LoadProteinReductions extends Fixture
         /**
          * Li5
          */
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Li5");
         $reduction->setLetters("YIGSE");
         $reduction->setPattern("/C|F|Y|W/");
         $reduction->setReduction("y");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Li5");
         $reduction->setLetters("YIGSE");
         $reduction->setPattern("/M|L|I|V/");
         $reduction->setReduction("i");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Li5");
         $reduction->setLetters("YIGSE");
         $reduction->setPattern("/G/");
         $reduction->setReduction("g");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Li5");
         $reduction->setLetters("YIGSE");
         $reduction->setPattern("/P|A|T|S/");
         $reduction->setReduction("s");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Li5");
         $reduction->setLetters("YIGSE");
         $reduction->setPattern("/N|H|Q|E|D|R|K/");
@@ -676,24 +767,28 @@ class LoadProteinReductions extends Fixture
         /**
          * Li4
          */
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Li4");
         $reduction->setLetters("YISE");
         $reduction->setPattern("/C|F|Y|W/");
         $reduction->setReduction("y");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Li4");
         $reduction->setLetters("YISE");
         $reduction->setPattern("/M|L|I|V/");
         $reduction->setReduction("i");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Li4");
         $reduction->setLetters("YISE");
         $reduction->setPattern("/G|P|A|T|S/");
         $reduction->setReduction("s");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Li4");
         $reduction->setLetters("YISE");
         $reduction->setPattern("/N|H|Q|E|D|R|K/");
@@ -703,18 +798,21 @@ class LoadProteinReductions extends Fixture
         /**
          * Li3
          */
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Li3");
         $reduction->setLetters("ISE");
         $reduction->setPattern("/C|F|Y|W|M|L|I|V/");
         $reduction->setReduction("i");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Li3");
         $reduction->setLetters("ISE");
         $reduction->setPattern("/G|P|A|T|S/");
         $reduction->setReduction("s");
         $manager->persist($reduction);
 
+        $reduction = new ProteinReduction();
         $reduction->setAlphabet("Li3");
         $reduction->setLetters("ISE");
         $reduction->setPattern("/N|H|Q|E|D|R|K/");
