@@ -65,6 +65,12 @@ class ProteinReduction
     private $reduction;
 
     /**
+     * @var     string  Description of the pattern (original alphabet)
+     * @ORM\Column(nullable=true)
+     */
+    private $description;
+
+    /**
      * @return int
      */
     public function getId(): int
@@ -158,5 +164,21 @@ class ProteinReduction
     public function setReduction(string $reduction): void
     {
         $this->reduction = $reduction;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param string $description
+     */
+    public function setDescription(string $description): void
+    {
+        $this->description = $description;
     }
 }
