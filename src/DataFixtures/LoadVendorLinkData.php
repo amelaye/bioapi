@@ -116,5 +116,7 @@ class LoadVendorLinkData
         $link->setName("EURx Ltd.");
         $link->setLink("http://www.eurx.com.pl/index.php?op=catalog&cat=8");
         $manager->persist($link);
+
+        $manager->flush();
     }
 }
