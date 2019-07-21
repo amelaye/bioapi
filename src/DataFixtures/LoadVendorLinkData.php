@@ -9,9 +9,10 @@
 namespace App\DataFixtures;
 
 use App\Entity\VendorLink;
+use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 
-class LoadVendorLinkData
+class LoadVendorLinkData extends Fixture
 {
     public function load(ObjectManager $manager)
     {
