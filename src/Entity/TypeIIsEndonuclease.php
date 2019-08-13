@@ -22,7 +22,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * )
  * @ORM\Entity
  */
-class TypeIIEndonuclease
+class TypeIIsEndonuclease
 {
     /**
      * @var     string      First endonucleolase of the list

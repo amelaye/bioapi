@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * Enzymes - TypeIIs Endonucleases
+ * Enzymes - TypeIIb Endonucleases
  * @package App\Entity
  * @author Amélie DUVERNET akka Amelaye <amelieonline@gmail.com>
  * @ApiResource(
@@ -22,7 +22,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * )
  * @ORM\Entity
  */
-class TypeIIEndonuclease
+class TypeIIbEndonuclease
 {
     /**
      * @var     string      First endonucleolase of the list
@@ -45,7 +45,7 @@ class TypeIIEndonuclease
 
     /**
      * @var     string      Recognition pattern for computing
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="text")
      */
     private $computingPattern;
 

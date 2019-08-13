@@ -1,11 +1,10 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: amelaye
- * Date: 2019-04-11
- * Time: 17:14
+ * Database of nucleotids - weigths included
+ * Inspired by BioPHP's project biophp.org
+ * Created 11 april 2019
+ * Last modified 11 april 2019
  */
-
 namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
@@ -13,15 +12,18 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * This is a dummy entity. Remove it!
+ * Database of nucleotids - weigths included
  *
- * @ApiResource
+ * @ApiResource(
+ *     collectionOperations={"get"},
+ *     itemOperations={"get"}
+ * )
  * @ORM\Entity
  */
 class Nucleotid
 {
     /**
-     * @var int
+     * @var     int         Id of the nucleotid (auto-increment)
      *
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -30,7 +32,7 @@ class Nucleotid
     private $id;
 
     /**
-     * @var string A, T, G or C for example
+     * @var     string      A, T, G or C for example
      *
      * @ORM\Column
      * @Assert\NotBlank
@@ -38,7 +40,7 @@ class Nucleotid
     private $letter;
 
     /**
-     * @var string
+     * @var     string      T for A ...
      *
      * @ORM\Column
      * @Assert\NotBlank
@@ -46,14 +48,14 @@ class Nucleotid
     private $complement;
 
     /**
-     * @var string DNA or RNA
+     * @var     string      DNA or RNA
      * @ORM\Column
      * @Assert\NotBlank
      */
     private $nature;
 
     /**
-     * @var float
+     * @var     float       Weight of the nucleotid
      *
      * @ORM\Column
      * @Assert\NotBlank

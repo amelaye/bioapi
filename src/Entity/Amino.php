@@ -1,11 +1,10 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: amelaye
- * Date: 2019-04-11
- * Time: 17:09
+ * Database of elements - Amino acids
+ * Inspired by BioPHP's project biophp.org
+ * Created 13 april 2019
+ * Last modified 13 april 2019
  */
-
 namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
@@ -13,42 +12,43 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * This is a dummy entity. Remove it!
+ * Database of elements - Amino acids
  *
- * @ApiResource
+ * @ApiResource(
+ *     collectionOperations={"get"},
+ *     itemOperations={"get"})
  * @ORM\Entity
  */
 class Amino
 {
     /**
-     * @var int
+     * @var     string         Id of the amino acid (auto-increment)
      *
      * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string")
      */
     private $id;
 
     /**
-     * @var string
+     * @var     string      Name of the amino
      *
-     * @ORM\Column
+     * @ORM\Column(type="string")
      * @Assert\NotBlank
      */
     private $name;
 
     /**
-     * @var string
+     * @var     string      Name in 1 letter (A, L, S ...)
      *
-     * @ORM\Column
+     * @ORM\Column(type="string")
      * @Assert\NotBlank
      */
     private $name1Letter;
 
     /**
-     * @var string
+     * @var string          Name in 3 letters (Ser, Leu ...)
      *
-     * @ORM\Column
+     * @ORM\Column(type="string")
      * @Assert\NotBlank
      */
     private $name3Letters;
@@ -56,7 +56,7 @@ class Amino
     /**
      * @var float
      *
-     * @ORM\Column
+     * @ORM\Column(type="decimal")
      * @Assert\NotBlank
      */
     private $weight1;
@@ -64,23 +64,30 @@ class Amino
     /**
      * @var float
      *
-     * @ORM\Column
+     * @ORM\Column(type="decimal")
      * @Assert\NotBlank
      */
     private $weight2;
 
     /**
-     * @return int
+     * @var float
+     *
+     * @ORM\Column(type="decimal", precision=5, scale=2, nullable=true)
      */
-    public function getId(): int
+    private $residueMolWeight;
+
+    /**
+     * @return string
+     */
+    public function getId(): string
     {
         return $this->id;
     }
 
     /**
-     * @param int $id
+     * @param string $id
      */
-    public function setId(int $id): void
+    public function setId(string $id): void
     {
         $this->id = $id;
     }
@@ -163,5 +170,21 @@ class Amino
     public function setWeight2(float $weight2): void
     {
         $this->weight2 = $weight2;
+    }
+
+    /**
+     * @return float
+     */
+    public function getResidueMolWeight(): ?float
+    {
+        return $this->residueMolWeight;
+    }
+
+    /**
+     * @param float $residueMolWeight
+     */
+    public function setResidueMolWeight(float $residueMolWeight): void
+    {
+        $this->residueMolWeight = $residueMolWeight;
     }
 }

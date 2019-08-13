@@ -1,18 +1,17 @@
 <?php
 /**
- * Database of elements - weigths included
+ * Database of elements - TypeIIs Endonucleolases
  * Inspired by BioPHP's project biophp.org
- * Created 11 april 2019
- * Last modified 11 april 2019
+ * Created 16 april 2019
+ * Last modified 16 april 2019
  */
 namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * Database of elements - weights included
+ * Enzymes - Vendors Links
  * @package App\Entity
  * @author Amélie DUVERNET akka Amelaye <amelieonline@gmail.com>
  * @ApiResource(
@@ -21,42 +20,39 @@ use Symfony\Component\Validator\Constraints as Assert;
  * )
  * @ORM\Entity
  */
-class Element
+class VendorLink
 {
     /**
-     * @var     int     The id (auto-increment)
+     * @var string
      * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string")
      */
     private $id;
 
     /**
-     * @var     string  Water, carbone, for example
-     * @ORM\Column
-     * @Assert\NotBlank
+     * @var string
+     * @ORM\Column(type="string")
      */
     private $name;
 
     /**
-     * @var     float   The weight of the nucleotid
-     * @ORM\Column
-     * @Assert\NotBlank
+     * @var string
+     * @ORM\Column(type="string")
      */
-    private $weight;
+    private $link;
 
     /**
-     * @return int
+     * @return string
      */
-    public function getId(): int
+    public function getId(): string
     {
         return $this->id;
     }
 
     /**
-     * @param int $id
+     * @param string $id
      */
-    public function setId(int $id): void
+    public function setId(string $id): void
     {
         $this->id = $id;
     }
@@ -78,18 +74,18 @@ class Element
     }
 
     /**
-     * @return float
+     * @return string
      */
-    public function getWeight(): float
+    public function getLink(): string
     {
-        return $this->weight;
+        return $this->link;
     }
 
     /**
-     * @param float $weight
+     * @param string $link
      */
-    public function setWeight(float $weight): void
+    public function setLink(string $link): void
     {
-        $this->weight = $weight;
+        $this->link = $link;
     }
 }
