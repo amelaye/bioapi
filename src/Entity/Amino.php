@@ -56,7 +56,7 @@ class Amino
     /**
      * @var float
      *
-     * @ORM\Column(type="decimal")
+     * @ORM\Column(type="decimal", precision=5, scale=2)
      * @Assert\NotBlank
      */
     private $weight1;
@@ -64,7 +64,7 @@ class Amino
     /**
      * @var float
      *
-     * @ORM\Column(type="decimal")
+     * @ORM\Column(type="decimal", precision=5, scale=2)
      * @Assert\NotBlank
      */
     private $weight2;
