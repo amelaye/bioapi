@@ -16,7 +16,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @package App\Entity
  * @author Amélie DUVERNET akka Amelaye <amelieonline@gmail.com>
  * @ApiResource(
- *     collectionOperations={"get","post"},
+ *     collectionOperations={"get"},
  *     itemOperations={"get"}
  * )
  * @ORM\Entity

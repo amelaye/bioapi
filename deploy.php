@@ -3,72 +3,107 @@ namespace Deployer;
 
 require 'recipe/symfony4.php';
 
+// ---------------------------------------------------------------------------
+// Général
+// ---------------------------------------------------------------------------
+
+// Nombre de releases conservées (rollback possible sur les 3 dernières)
 set('keep_releases', 3);
 
-// Project name
+// Nom du projet
 set('application', 'api.amelayes-biophp.net');
 
-// Project repository
+// Dépôt Git
 set('repository', 'https://github.com/amelaye/bioapi.git');
 
-// Sets the default httpd user.
-set('http_user', 'deploy');
+// ---------------------------------------------------------------------------
+// Permissions / sécurité
+// ---------------------------------------------------------------------------
 
-// Sets writable options.
-set('writable_mode', 'chown');
-set('writable_use_sudo', TRUE);
-set('writable_chmod_mode', '0777');
+// CHANGÉ : le serveur web réel est www-data (pool php-fpm), pas "deploy".
+// C'est lui qui doit pouvoir écrire dans var/.
+set('http_user', 'www-data');
 
-// [Optional] Allocate tty for git clone. Default value is false.
-set('git_tty', true); 
+// CHANGÉ : "acl" au lieu de "chown" — pose des ACL ciblées pour www-data
+// sans changer le propriétaire ni ouvrir les droits à tout le monde.
+// (Nécessite le paquet "acl" installé sur le serveur : voir note en bas.)
+set('writable_mode', 'acl');
 
-// Shared files/dirs between deploys 
+// CHANGÉ : on retire le 0777. En mode acl, writable_chmod_mode n'est plus
+// utilisé pour ouvrir grand ; les ACL gèrent l'écriture proprement.
+// (On ne définit plus writable_chmod_mode => plus de 0777 baladeur.)
+
+// Sudo encore nécessaire pour poser les ACL pendant le déploiement.
+// NOTE SÉCURITÉ : c'est ce sudo qu'on restreindra ensuite via
+// /etc/sudoers.d/deploy, une fois qu'on aura observé un déploiement.
+set('writable_use_sudo', true);
+
+// Allocation d'un tty pour git clone
+set('git_tty', true);
+
+// ---------------------------------------------------------------------------
+// Fichiers / dossiers partagés entre les releases
+// ---------------------------------------------------------------------------
+
+// Fichiers partagés : le .env vit dans shared/ et est symliké dans chaque release.
 add('shared_files', ['.env']);
-add('shared_dirs', []);
 
-// Writable dirs by web server 
-add('writable_dirs', [
-    'var/cache'
+// CHANGÉ : les logs et sessions doivent PERSISTER entre les déploiements.
+// Sans ça, chaque release repart avec des var/log et var/sessions vides.
+add('shared_dirs', [
+    'var/log',
+    'var/sessions',
 ]);
 
-// Hosts.
+// ---------------------------------------------------------------------------
+// Dossiers inscriptibles par le serveur web
+// ---------------------------------------------------------------------------
+
+// CHANGÉ : ajout de var/log (PHP y écrit aussi). var/sessions est en shared,
+// il sera inscriptible via son propre dossier partagé.
+add('writable_dirs', [
+    'var/cache',
+    'var/log',
+    'var/sessions',
+]);
+
+// ---------------------------------------------------------------------------
+// Hôtes
+// ---------------------------------------------------------------------------
+
+// CHANGÉ : hostname aligné sur le vrai domaine du projet (au lieu de
+// amelieonline.net, qui prêtait à confusion). Les deux résolvent vers la
+// même IP, mais autant que ce soit lisible.
+// NOTE : la branche 'develop' est conservée telle quelle — à confirmer si
+// tu veux plutôt déployer 'master'/'main'.
 host('production')
-    ->hostname('amelieonline.net')
+    ->hostname('amelayes-biophp.net')
     ->user('deploy')
     ->set('deploy_path', '/home/web/{{application}}')
     ->set('branch', 'develop')
     ->stage('prod');
-    
-// Tasks
 
-// Tasks.
+// ---------------------------------------------------------------------------
+// Tâches
+// ---------------------------------------------------------------------------
+
 task('deploy', [
     'deploy:info',
-    // Preparation for deployment. Checks if deploy_path exists, otherwise create it.
     'deploy:prepare',
-    // Locks deployment so only one concurrent deployment can be running.
     'deploy:lock',
-    // Create a new release folder based on the release_name config.
     'deploy:release',
-    // Download a new version of code using Git.
     'deploy:update_code',
-    // Creates shared files and directories from shared directory to release_path.
     'deploy:shared',
-    // Makes the directories listed in writable_dirs writable.
     'deploy:writable',
-    // Runs composer install.
     'deploy:vendors',
-    // Switch current symlink to release_path.
     'deploy:symlink',
     'deploy:unlock',
     'cleanup',
     'success',
 ]);
 
-// [Optional] if deploy fails automatically unlock.
+// Si le déploiement échoue, on déverrouille automatiquement.
 after('deploy:failed', 'deploy:unlock');
 
-// Migrate database before symlink new release.
-
+// Migration de la base avant de basculer le symlink sur la nouvelle release.
 before('deploy:symlink', 'database:migrate');
-

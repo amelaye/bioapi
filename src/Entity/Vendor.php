@@ -15,7 +15,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @package App\Entity
  * @author Amélie DUVERNET akka Amelaye <amelieonline@gmail.com>
  * @ApiResource(
- *     collectionOperations={"get","post"},
+ *     collectionOperations={"get"},
  *     itemOperations={"get"}
  * )
  * @ORM\Entity
