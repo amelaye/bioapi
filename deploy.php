@@ -43,6 +43,7 @@ set('git_tty', true);
 
 set('ssh_multiplexing', false);
 set('ssh_type', 'native');
+set('bin/ssh', 'C:\Windows\System32\OpenSSH\ssh.exe');
 
 
 // ---------------------------------------------------------------------------
