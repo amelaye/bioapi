@@ -43,6 +43,7 @@ set('git_tty', true);
 
 set('ssh_multiplexing', false);
 
+
 // ---------------------------------------------------------------------------
 // Fichiers / dossiers partagés entre les releases
 // ---------------------------------------------------------------------------
@@ -78,9 +79,7 @@ add('writable_dirs', [
 // même IP, mais autant que ce soit lisible.
 // NOTE : la branche 'develop' est conservée telle quelle — à confirmer si
 // tu veux plutôt déployer 'master'/'main'.
-host('production')
-    ->hostname('amelayes-biophp.net')
-    ->user('deploy')
+host('bioapi-prod')
     ->set('deploy_path', '/home/web/{{application}}')
     ->set('branch', 'develop')
     ->stage('prod');
