@@ -41,6 +41,8 @@ set('writable_use_sudo', true);
 // Allocation d'un tty pour git clone
 set('git_tty', true);
 
+set('ssh_multiplexing', false);
+
 // ---------------------------------------------------------------------------
 // Fichiers / dossiers partagés entre les releases
 // ---------------------------------------------------------------------------
