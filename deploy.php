@@ -42,6 +42,7 @@ set('writable_use_sudo', true);
 set('git_tty', true);
 
 set('ssh_multiplexing', false);
+set('ssh_type', 'native');
 
 
 // ---------------------------------------------------------------------------
