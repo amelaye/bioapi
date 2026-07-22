@@ -13,3 +13,5 @@
 ###< symfony/web-server-bundle ###
 
 .idea
+symfony.lock
+composer.lock

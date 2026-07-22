@@ -10,7 +10,7 @@ namespace App\DataFixtures;
 
 use App\Entity\TripletSpecie;
 use Doctrine\Bundle\FixturesBundle\Fixture;
-use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\Persistence\ObjectManager;
 
 class LoadTripletsSpeciesData extends Fixture
 {

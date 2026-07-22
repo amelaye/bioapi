@@ -11,7 +11,7 @@ namespace App\DataFixtures;
 
 use App\Entity\Pam250MatrixDigit;
 use Doctrine\Bundle\FixturesBundle\Fixture;
-use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\Persistence\ObjectManager;
 
 class LoadPam250MatrixData extends Fixture
 {

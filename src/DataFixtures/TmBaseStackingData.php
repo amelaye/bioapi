@@ -10,7 +10,7 @@ namespace App\DataFixtures;
 
 use App\Entity\TmBaseStacking;
 use Doctrine\Bundle\FixturesBundle\Fixture;
-use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\Persistence\ObjectManager;
 
 class TmBaseStackingData extends fixture
 {
