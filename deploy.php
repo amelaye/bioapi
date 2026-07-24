@@ -43,7 +43,11 @@ set('git_tty', true);
 
 set('ssh_multiplexing', false);
 set('ssh_type', 'native');
-set('bin/ssh', 'C:\Windows\System32\OpenSSH\ssh.exe');
+//set('bin/ssh', 'C:\Windows\System32\OpenSSH\ssh.exe');
+
+if (stripos(PHP_OS, 'WIN') === 0) {
+    set('bin/ssh', 'C:\Windows\System32\OpenSSH\ssh.exe');
+}
 
 
 // ---------------------------------------------------------------------------
