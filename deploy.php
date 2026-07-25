@@ -112,6 +112,19 @@ task('deploy', [
     'success',
 ]);
 
+// Réchauffe le cache prod en tant que www-data (bonnes permissions)
+task('deploy:cache_warmup', function () {
+    run('cd {{release_path}} && {{bin/php}} bin/console cache:warmup --env=prod');
+});
+
+// Redémarre PHP-FPM pour purger OPcache (container compilé)
+task('deploy:restart_fpm', function () {
+    run('sudo /bin/systemctl restart php7.4-fpm');
+});
+
+after('deploy:symlink', 'deploy:cache_warmup');
+after('deploy:cache_warmup', 'deploy:restart_fpm');
+
 // Si le déploiement échoue, on déverrouille automatiquement.
 after('deploy:failed', 'deploy:unlock');
 
