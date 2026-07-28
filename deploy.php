@@ -38,7 +38,7 @@ set('writable_mode', 'acl');
 // /etc/sudoers.d/deploy, une fois qu'on aura observé un déploiement.
 set('writable_use_sudo', true);
 
-set('ssh_multiplexing', false);
+set('ssh_multiplexing', true);
 
 set('bin/php', '/usr/bin/php8.1');
 set('bin/composer', '/usr/bin/php8.1 /usr/local/bin/composer');
