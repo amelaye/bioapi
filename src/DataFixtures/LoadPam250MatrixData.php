@@ -18,7 +18,7 @@ class LoadPam250MatrixData extends Fixture
     /**
      * @param ObjectManager $manager
      */
-    public function load(ObjectManager $manager)
+    public function load(ObjectManager $manager): void
     {
         $_1 = ["CC" => 12];
         $_2 = ["SC" => 0, "SS" => 2];

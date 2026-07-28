@@ -14,7 +14,7 @@ use Doctrine\Persistence\ObjectManager;
 
 class LoadNucleotidData extends Fixture
 {
-    public function load(ObjectManager $manager)
+    public function load(ObjectManager $manager): void
     {
         $nucleotid = new Nucleotid();
         $nucleotid->setLetter("A");

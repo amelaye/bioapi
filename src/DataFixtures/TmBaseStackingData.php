@@ -14,7 +14,7 @@ use Doctrine\Persistence\ObjectManager;
 
 class TmBaseStackingData extends fixture
 {
-    public function load(ObjectManager $manager)
+    public function load(ObjectManager $manager): void
     {
         $temperatures = array(
             array(

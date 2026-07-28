@@ -14,7 +14,7 @@ use Doctrine\Persistence\ObjectManager;
 
 class LoadProteinReductions extends Fixture
 {
-    public function load(ObjectManager $manager)
+    public function load(ObjectManager $manager): void
     {
         $reduction = new ProteinReduction();
         $reduction->setAlphabet(20);

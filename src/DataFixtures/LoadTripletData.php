@@ -14,7 +14,7 @@ use Doctrine\Persistence\ObjectManager;
 
 class LoadTripletData extends Fixture
 {
-    public function load(ObjectManager $manager)
+    public function load(ObjectManager $manager): void
     {
         $triplet = new Triplet();
         $triplet->setTriplet("TTT");

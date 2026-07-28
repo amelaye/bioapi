@@ -14,7 +14,7 @@ use Doctrine\Persistence\ObjectManager;
 
 class LoadVendorLinkData extends Fixture
 {
-    public function load(ObjectManager $manager)
+    public function load(ObjectManager $manager): void
     {
         $link = new VendorLink();
         $link->setId("C");

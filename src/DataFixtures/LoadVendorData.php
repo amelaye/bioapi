@@ -14,7 +14,7 @@ use Doctrine\Persistence\ObjectManager;
 
 class LoadVendorData extends fixture
 {
-    public function load(ObjectManager $manager)
+    public function load(ObjectManager $manager): void
     {
         $vendors = array(
             "AanI" => "F",

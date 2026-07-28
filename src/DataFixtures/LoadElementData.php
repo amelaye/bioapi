@@ -20,7 +20,7 @@ use Doctrine\Persistence\ObjectManager;
  */
 class LoadElementData extends Fixture
 {
-    public function load(ObjectManager $manager)
+    public function load(ObjectManager $manager): void
     {
         $element = new Element();
         $element->setName("carbone");

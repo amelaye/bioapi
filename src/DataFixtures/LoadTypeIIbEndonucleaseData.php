@@ -14,7 +14,7 @@ use Doctrine\Persistence\ObjectManager;
 
 class LoadTypeIIbEndonucleaseData extends Fixture
 {
-    public function load(ObjectManager $manager)
+    public function load(ObjectManager $manager): void
     {
         $endonuclease = new TypeIIbEndonuclease();
         $endonuclease->setId("AjuI#");

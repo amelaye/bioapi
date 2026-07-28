@@ -14,7 +14,7 @@ use Doctrine\Persistence\ObjectManager;
 
 class LoadTypeIIEndonucleaseData extends Fixture
 {
-    public function load(ObjectManager $manager)
+    public function load(ObjectManager $manager): void
     {
         $aEnzymes = array(
             "AasI" => [["AasI,DrdI,DseDI"],"GACNN_NN'NNGTC","(GAC......GTC)",12,7,-2,6],

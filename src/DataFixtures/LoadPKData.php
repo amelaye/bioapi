@@ -14,7 +14,7 @@ use Doctrine\Persistence\ObjectManager;
 
 class LoadPKData extends Fixture
 {
-    public function load(ObjectManager $manager)
+    public function load(ObjectManager $manager): void
     {
         $pkValue = new PK();
         $pkValue->setId("EMBOSS");

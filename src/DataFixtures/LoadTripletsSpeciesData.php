@@ -14,7 +14,7 @@ use Doctrine\Persistence\ObjectManager;
 
 class LoadTripletsSpeciesData extends Fixture
 {
-    public function load(ObjectManager $manager)
+    public function load(ObjectManager $manager): void
     {
         $triplets_standard = [
             '(TTT |TTC )',

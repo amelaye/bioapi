@@ -14,7 +14,7 @@ use Doctrine\Persistence\ObjectManager;
  */
 class LoadAminoData extends Fixture
 {
-    public function load(ObjectManager $manager)
+    public function load(ObjectManager $manager): void
     {
         $amino = new Amino();
         $amino->setId('A');
