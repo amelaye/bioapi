@@ -49,8 +49,8 @@ if (stripos(PHP_OS, 'WIN') === 0) {
     set('bin/ssh', 'C:\Windows\System32\OpenSSH\ssh.exe');
 }
 
-set('bin/php', '/usr/bin/php7.4');
-set('bin/composer', '/usr/bin/php7.4 /usr/local/bin/composer');
+set('bin/php', '/usr/bin/php8.1');
+set('bin/composer', '/usr/bin/php8.1 /usr/local/bin/composer');
 
 
 // ---------------------------------------------------------------------------
