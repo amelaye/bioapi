@@ -7,7 +7,7 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
-            anonymous: true
+            # depuis Symfony 5.3+, l'accès anonyme est implicite (plus besoin de "anonymous: true", supprimé en 6.0)
 
             # activate different ways to authenticate
 
