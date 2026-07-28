@@ -91,14 +91,12 @@ host('bioapi-prod')
 task('deploy', [
     'deploy:info',
     'deploy:prepare',
-    'deploy:lock',
     'deploy:release',
     'deploy:update_code',
     'deploy:shared',
     'deploy:writable',
     'deploy:vendors',
     'deploy:symlink',
-    'deploy:unlock',
     'deploy:cleanup',
     'deploy:success',
 ]);
