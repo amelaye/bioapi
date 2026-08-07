@@ -1,7 +1,7 @@
 <?php
 namespace Deployer;
 
-require 'recipe/symfony4.php';
+require 'recipe/symfony.php';
 
 // ---------------------------------------------------------------------------
 // Général
@@ -38,16 +38,7 @@ set('writable_mode', 'acl');
 // /etc/sudoers.d/deploy, une fois qu'on aura observé un déploiement.
 set('writable_use_sudo', true);
 
-// Allocation d'un tty pour git clone
-set('git_tty', true);
-
-set('ssh_multiplexing', false);
-set('ssh_type', 'native');
-//set('bin/ssh', 'C:\Windows\System32\OpenSSH\ssh.exe');
-
-if (stripos(PHP_OS, 'WIN') === 0) {
-    set('bin/ssh', 'C:\Windows\System32\OpenSSH\ssh.exe');
-}
+set('ssh_multiplexing', true);
 
 set('bin/php', '/usr/bin/php8.1');
 set('bin/composer', '/usr/bin/php8.1 /usr/local/bin/composer');
@@ -91,39 +82,25 @@ add('writable_dirs', [
 host('bioapi-prod')
     ->set('deploy_path', '/home/web/{{application}}')
     ->set('branch', 'master')
-    ->stage('prod');
+    ->setLabels(['stage' => 'prod']);
 
 // ---------------------------------------------------------------------------
 // Tâches
 // ---------------------------------------------------------------------------
 
-task('deploy', [
-    'deploy:info',
-    'deploy:prepare',
-    'deploy:lock',
-    'deploy:release',
-    'deploy:update_code',
-    'deploy:shared',
-    'deploy:writable',
-    'deploy:vendors',
-    'deploy:symlink',
-    'deploy:unlock',
-    'cleanup',
-    'success',
-]);
+// NOTE : on NE redéfinit PAS la tâche 'deploy' ici. recipe/symfony.php le
+// fait déjà (deploy:prepare -> deploy:vendors -> deploy:cache:clear ->
+// deploy:publish). La redéfinir à la main dupliquait deploy:info et
+// deploy:release (déjà inclus dans deploy:prepare), ce qui faisait planter
+// le déploiement avec "Release name already exists" — et faisait disparaître
+// deploy:unlock du flux.
 
 // Réchauffe le cache prod en tant que www-data (bonnes permissions)
 task('deploy:cache_warmup', function () {
     run('cd {{release_path}} && {{bin/php}} bin/console cache:warmup --env=prod');
 });
 
-// Redémarre PHP-FPM pour purger OPcache (container compilé)
-task('deploy:restart_fpm', function () {
-    run('sudo /bin/systemctl restart php7.4-fpm');
-});
-
 after('deploy:symlink', 'deploy:cache_warmup');
-after('deploy:cache_warmup', 'deploy:restart_fpm');
 
 // Si le déploiement échoue, on déverrouille automatiquement.
 after('deploy:failed', 'deploy:unlock');
