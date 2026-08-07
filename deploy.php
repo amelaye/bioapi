@@ -88,18 +88,12 @@ host('bioapi-prod')
 // Tâches
 // ---------------------------------------------------------------------------
 
-task('deploy', [
-    'deploy:info',
-    'deploy:prepare',
-    'deploy:release',
-    'deploy:update_code',
-    'deploy:shared',
-    'deploy:writable',
-    'deploy:vendors',
-    'deploy:symlink',
-    'deploy:cleanup',
-    'deploy:success',
-]);
+// NOTE : on NE redéfinit PAS la tâche 'deploy' ici. recipe/symfony.php le
+// fait déjà (deploy:prepare -> deploy:vendors -> deploy:cache:clear ->
+// deploy:publish). La redéfinir à la main dupliquait deploy:info et
+// deploy:release (déjà inclus dans deploy:prepare), ce qui faisait planter
+// le déploiement avec "Release name already exists" — et faisait disparaître
+// deploy:unlock du flux.
 
 // Réchauffe le cache prod en tant que www-data (bonnes permissions)
 task('deploy:cache_warmup', function () {
