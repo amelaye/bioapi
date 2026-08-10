@@ -37,14 +37,14 @@ class Amino
     /**
      * @var     string      Name in 1 letter (A, L, S ...)
      */
-    #[ORM\Column(type: 'string')]
+    #[ORM\Column(name: 'name1letter', type: 'string')]
     #[Assert\NotBlank]
     private $name1Letter;
 
     /**
      * @var string          Name in 3 letters (Ser, Leu ...)
      */
-    #[ORM\Column(type: 'string')]
+    #[ORM\Column(name: 'name3letters', type: 'string')]
     #[Assert\NotBlank]
     private $name3Letters;
 
