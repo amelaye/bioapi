@@ -32,6 +32,13 @@ final class Version20260807140000 extends AbstractMigration
     {
         foreach (self::CONVERSIONS as $conversion) {
             foreach ($conversion['columns'] as $column) {
+                // MySQL DDL implicitly commits. If recording this migration in
+                // migration_versions fails afterwards, a retry must not try to
+                // unserialize values that were already converted to JSON.
+                if ($this->isJsonColumn($conversion['table'], $column)) {
+                    continue;
+                }
+
                 $this->convertColumn($conversion['table'], $column, 'serialize', 'json');
                 $this->connection->executeStatement(sprintf(
                     'ALTER TABLE %s MODIFY %s JSON NOT NULL',
@@ -54,6 +61,27 @@ final class Version20260807140000 extends AbstractMigration
                 $this->convertColumn($conversion['table'], $column, 'json', 'serialize');
             }
         }
+    }
+
+    private function isJsonColumn(string $table, string $column): bool
+    {
+        $dataType = $this->connection->fetchOne(
+            <<<'SQL'
+                SELECT DATA_TYPE
+                FROM information_schema.COLUMNS
+                WHERE TABLE_SCHEMA = DATABASE()
+                  AND TABLE_NAME = :table
+                  AND COLUMN_NAME = :column
+                SQL,
+            ['table' => $table, 'column' => $column]
+        );
+
+        $this->abortIf(
+            $dataType === false,
+            sprintf('Could not determine the type of %s.%s', $table, $column)
+        );
+
+        return strtolower((string) $dataType) === 'json';
     }
 
     /**
