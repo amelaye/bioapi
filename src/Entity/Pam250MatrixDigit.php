@@ -3,40 +3,36 @@
  * PAM 250 Matrix
  * Inspired by BioPHP's project biophp.org
  * Created 21 july 2019
- * Last modified 21 july 2019
+ * Last modified 7 august 2026
  */
 namespace App\Entity;
 
-use ApiPlatform\Core\Annotation\ApiResource;
+use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\GetCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * PAM 250 Matrix
- *
- * @ApiResource(
- *     collectionOperations={"get"},
- *     itemOperations={"get"}
- * )
- * @ORM\Entity
  */
+#[ApiResource(operations: [new GetCollection(), new Get()])]
+#[ORM\Entity]
 class Pam250MatrixDigit
 {
     /**
      * @var     string         Index
-     *
-     * @ORM\Id
-     * @ORM\Column(type="string")
-     * @Assert\NotBlank
      */
+    #[ORM\Id]
+    #[ORM\Column(type: 'string')]
+    #[Assert\NotBlank]
     private $id;
 
     /**
      * @var     int         Value
-     *
-     * @ORM\Column(type="integer")
-     * @Assert\NotBlank
      */
+    #[ORM\Column(type: 'integer')]
+    #[Assert\NotBlank]
     private $value;
 
     /**

@@ -3,40 +3,37 @@
  * Database of Triplets
  * Inspired by BioPHP's project biophp.org
  * Created 9 july 2019
- * Last modified 9 july 2019
+ * Last modified 7 august 2026
  */
 namespace App\Entity;
 
-use ApiPlatform\Core\Annotation\ApiResource;
+use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\GetCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Database of Triplets
- *
- * @ApiResource(
- *     collectionOperations={"get"},
- *     itemOperations={"get"}
- * )
- * @ORM\Entity
  */
+#[ApiResource(operations: [new GetCollection(), new Get()])]
+#[ORM\Entity]
 class Triplet
 {
     /**
      * @var     int     The id (auto-increment)
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
      */
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column(type: 'integer')]
     private $id;
 
     /**
      * TTT, TTC ...
      * @var     string
-     *
-     * @ORM\Column
-     * @Assert\NotBlank
      */
+    #[ORM\Column]
+    #[Assert\NotBlank]
     private $triplet;
 
 

@@ -3,71 +3,69 @@
  * Database of elements - PK Values
  * Inspired by BioPHP's project biophp.org
  * Created 17 july 2019
- * Last modified 17 july 2019
+ * Last modified 7 august 2026
  */
 namespace App\Entity;
 
-use ApiPlatform\Core\Annotation\ApiResource;
+use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\GetCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Database of elements - PK Values
- *
- * @ApiResource(
- *     collectionOperations={"get"},
- *     itemOperations={"get"})
- * @ORM\Entity
  */
+#[ApiResource(operations: [new GetCollection(), new Get()])]
+#[ORM\Entity]
 class ProteinReduction
 {
     /**
      * @var     int       Id of the row
-     *
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
      */
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column(type: 'integer')]
     private $id;
 
     /**
      * @var     string  Name of the Alphabet (Murphy etc ...)
-     * @ORM\Column
-     * @Assert\NotBlank
      */
+    #[ORM\Column]
+    #[Assert\NotBlank]
     private $alphabet;
 
     /**
      * @var     string  Letters of the alphabet
-     * @ORM\Column
-     * @Assert\NotBlank
      */
+    #[ORM\Column]
+    #[Assert\NotBlank]
     private $letters;
 
     /**
      * @var     string  Patterns of reduction
-     * @ORM\Column
-     * @Assert\NotBlank
      */
+    #[ORM\Column]
+    #[Assert\NotBlank]
     private $pattern;
 
     /**
      * @var     string  Nature of the pattern (Aliphatic, Aromatic ...)
-     * @ORM\Column(nullable=true)
      */
+    #[ORM\Column(nullable: true)]
     private $nature;
 
     /**
      * @var     string  Corresponding letter
-     * @ORM\Column
-     * @Assert\NotBlank
      */
+    #[ORM\Column]
+    #[Assert\NotBlank]
     private $reduction;
 
     /**
      * @var     string  Description of the pattern (original alphabet)
-     * @ORM\Column(nullable=true)
      */
+    #[ORM\Column(nullable: true)]
     private $description;
 
     /**

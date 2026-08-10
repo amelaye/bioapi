@@ -3,102 +3,91 @@
  * Database of elements - PK Values
  * Inspired by BioPHP's project biophp.org
  * Created 13 april 2019
- * Last modified 13 april 2019
+ * Last modified 7 august 2026
  */
 namespace App\Entity;
 
-use ApiPlatform\Core\Annotation\ApiResource;
+use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\GetCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Database of elements - PK Values
- *
- * @ApiResource(
- *     collectionOperations={"get"},
- *     itemOperations={"get"})
- * @ORM\Entity
  */
+#[ApiResource(operations: [new GetCollection(), new Get()])]
+#[ORM\Entity]
 class PK
 {
     /**
      * @var     string       Id of the row (EMBOSS ...)
-     *
-     * @ORM\Id
-     * @ORM\Column(type="string")
      */
+    #[ORM\Id]
+    #[ORM\Column(type: 'string')]
     private $id;
 
     /**
      * @var     float
-     *
-     * @ORM\Column
-     * @Assert\NotBlank
      */
+    #[ORM\Column]
+    #[Assert\NotBlank]
     private $nTerminus;
 
     /**
      * @var     float
-     *
-     * @ORM\Column
-     * @Assert\NotBlank
      */
+    #[ORM\Column]
+    #[Assert\NotBlank]
     private $k;
 
     /**
      * @var     float
-     *
-     * @ORM\Column
-     * @Assert\NotBlank
      */
+    #[ORM\Column]
+    #[Assert\NotBlank]
     private $r;
 
     /**
      * @var     float
-     *
-     * @ORM\Column
-     * @Assert\NotBlank
      */
+    #[ORM\Column]
+    #[Assert\NotBlank]
     private $h;
 
     /**
      * @var     float
-     *
-     * @ORM\Column
-     * @Assert\NotBlank
      */
+    #[ORM\Column]
+    #[Assert\NotBlank]
     private $cTerminus;
 
     /**
      * @var     float
-     *
-     * @ORM\Column
-     * @Assert\NotBlank
      */
+    #[ORM\Column]
+    #[Assert\NotBlank]
     private $d;
 
     /**
      * @var     float
-     *
-     * @ORM\Column
-     * @Assert\NotBlank
      */
+    #[ORM\Column]
+    #[Assert\NotBlank]
     private $e;
 
     /**
      * @var     float
-     *
-     * @ORM\Column
-     * @Assert\NotBlank
      */
+    #[ORM\Column]
+    #[Assert\NotBlank]
     private $c;
 
     /**
      * @var     float
-     *
-     * @ORM\Column
-     * @Assert\NotBlank
      */
+    #[ORM\Column]
+    #[Assert\NotBlank]
     private $y;
 
     /**

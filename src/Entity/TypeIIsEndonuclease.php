@@ -3,74 +3,72 @@
  * Database of elements - TypeIIs Endonucleolases
  * Inspired by BioPHP's project biophp.org
  * Created 15 april 2019
- * Last modified 15 april 2019
+ * Last modified 7 august 2026
  * RIP Notre Dame de Paris is burning </3
  */
 namespace App\Entity;
 
-use ApiPlatform\Core\Annotation\ApiResource;
+use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\GetCollection;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Enzymes - TypeIIs Endonucleases
  * @package App\Entity
  * @author Amélie DUVERNET akka Amelaye <amelieonline@gmail.com>
- * @ApiResource(
- *     collectionOperations={"get"},
- *     itemOperations={"get"}
- * )
- * @ORM\Entity
  */
+#[ApiResource(operations: [new GetCollection(), new Get()])]
+#[ORM\Entity]
 class TypeIIsEndonuclease
 {
     /**
      * @var     string      First endonucleolase of the list
-     * @ORM\Id
-     * @ORM\Column(type="string")
      */
+    #[ORM\Id]
+    #[ORM\Column(type: 'string')]
     private $id;
 
     /**
      * @var     array       All endonucleolases recognizing the same pattern
-     * @ORM\Column(type="array")
      */
+    #[ORM\Column(type: 'json')]
     private $samePattern;
 
     /**
      * @var     string      Recognition pattern
-     * @ORM\Column(type="string")
      */
+    #[ORM\Column(type: 'string')]
     private $recognitionPattern;
 
     /**
      * @var     string      Recognition pattern for computing
-     * @ORM\Column(type="string")
      */
+    #[ORM\Column(type: 'string')]
     private $computingPattern;
 
     /**
      * @var     int         Length of all recognition pattern
-     * @ORM\Column(type="integer")
      */
+    #[ORM\Column(type: 'integer')]
     private $lengthRecognitionPattern;
 
     /**
      * @var     int         Cleavage position in upper strand
-     * @ORM\Column(type="integer")
      */
+    #[ORM\Column(type: 'integer')]
     private $cleavagePosUpper;
 
     /**
      * @var     int         Cleavage position in lower strand, relative to previous one
-     * @ORM\Column(type="integer")
      */
+    #[ORM\Column(type: 'integer')]
     private $cleavagePosLower;
 
     /**
      * @var     int         Number of non-N bases within recognition pattern
-     * @ORM\Column(type="integer")
      */
+    #[ORM\Column(type: 'integer')]
     private $nbNonNBases;
 
     /**

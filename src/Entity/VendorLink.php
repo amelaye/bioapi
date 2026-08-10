@@ -3,42 +3,41 @@
  * Database of elements - TypeIIs Endonucleolases
  * Inspired by BioPHP's project biophp.org
  * Created 16 april 2019
- * Last modified 16 april 2019
+ * Last modified 7 august 2026
  */
 namespace App\Entity;
 
-use ApiPlatform\Core\Annotation\ApiResource;
+use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\GetCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Enzymes - Vendors Links
  * @package App\Entity
  * @author Amélie DUVERNET akka Amelaye <amelieonline@gmail.com>
- * @ApiResource(
- *     collectionOperations={"get"},
- *     itemOperations={"get"}
- * )
- * @ORM\Entity
  */
+#[ApiResource(operations: [new GetCollection(), new Get()])]
+#[ORM\Entity]
 class VendorLink
 {
     /**
      * @var string
-     * @ORM\Id
-     * @ORM\Column(type="string")
      */
+    #[ORM\Id]
+    #[ORM\Column(type: 'string')]
     private $id;
 
     /**
      * @var string
-     * @ORM\Column(type="string")
      */
+    #[ORM\Column(type: 'string')]
     private $name;
 
     /**
      * @var string
-     * @ORM\Column(type="string")
      */
+    #[ORM\Column(type: 'string')]
     private $link;
 
     /**

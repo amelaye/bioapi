@@ -3,77 +3,69 @@
  * Database of elements - Amino acids
  * Inspired by BioPHP's project biophp.org
  * Created 13 april 2019
- * Last modified 13 april 2019
+ * Last modified 7 august 2026
  */
 namespace App\Entity;
 
-use ApiPlatform\Core\Annotation\ApiResource;
+use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\GetCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Database of elements - Amino acids
- *
- * @ApiResource(
- *     collectionOperations={"get"},
- *     itemOperations={"get"})
- * @ORM\Entity
  */
+#[ApiResource(operations: [new GetCollection(), new Get()])]
+#[ORM\Entity]
 class Amino
 {
     /**
      * @var     string         Id of the amino acid (auto-increment)
-     *
-     * @ORM\Id
-     * @ORM\Column(type="string")
      */
+    #[ORM\Id]
+    #[ORM\Column(type: 'string')]
     private $id;
 
     /**
      * @var     string      Name of the amino
-     *
-     * @ORM\Column(type="string")
-     * @Assert\NotBlank
      */
+    #[ORM\Column(type: 'string')]
+    #[Assert\NotBlank]
     private $name;
 
     /**
      * @var     string      Name in 1 letter (A, L, S ...)
-     *
-     * @ORM\Column(type="string")
-     * @Assert\NotBlank
      */
+    #[ORM\Column(type: 'string')]
+    #[Assert\NotBlank]
     private $name1Letter;
 
     /**
      * @var string          Name in 3 letters (Ser, Leu ...)
-     *
-     * @ORM\Column(type="string")
-     * @Assert\NotBlank
      */
+    #[ORM\Column(type: 'string')]
+    #[Assert\NotBlank]
     private $name3Letters;
 
     /**
      * @var float
-     *
-     * @ORM\Column(type="decimal", precision=5, scale=2)
-     * @Assert\NotBlank
      */
+    #[ORM\Column(type: 'decimal', precision: 5, scale: 2)]
+    #[Assert\NotBlank]
     private $weight1;
 
     /**
      * @var float
-     *
-     * @ORM\Column(type="decimal", precision=5, scale=2)
-     * @Assert\NotBlank
      */
+    #[ORM\Column(type: 'decimal', precision: 5, scale: 2)]
+    #[Assert\NotBlank]
     private $weight2;
 
     /**
      * @var float
-     *
-     * @ORM\Column(type="decimal", precision=5, scale=2, nullable=true)
      */
+    #[ORM\Column(type: 'decimal', precision: 5, scale: 2, nullable: true)]
     private $residueMolWeight;
 
     /**

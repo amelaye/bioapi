@@ -40,8 +40,8 @@ set('writable_use_sudo', true);
 
 set('ssh_multiplexing', true);
 
-set('bin/php', '/usr/bin/php8.1');
-set('bin/composer', '/usr/bin/php8.1 /usr/local/bin/composer');
+set('bin/php', '/usr/bin/php');
+set('bin/composer', '/usr/bin/php /usr/local/bin/composer');
 
 
 // ---------------------------------------------------------------------------

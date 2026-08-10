@@ -3,56 +3,51 @@
  * Database of Triplets
  * Inspired by BioPHP's project biophp.org
  * Created 13 april 2019
- * Last modified 13 april 2019
+ * Last modified 7 august 2026
  */
 namespace App\Entity;
 
-use ApiPlatform\Core\Annotation\ApiResource;
+use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\GetCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Database of elements - Triplets ans Species
- *
- * @ApiResource(
- *     collectionOperations={"get"},
- *     itemOperations={"get"}
- * )
- * @ORM\Entity
  */
+#[ApiResource(operations: [new GetCollection(), new Get()])]
+#[ORM\Entity]
 class TripletSpecie
 {
     /**
      * @var     int     The id (auto-increment)
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
      */
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column(type: 'integer')]
     private $id;
 
     /**
      * Standard, Vertebrate mitochondrial ...
      * @var     string
-     *
-     * @ORM\Column
-     * @Assert\NotBlank
      */
+    #[ORM\Column]
+    #[Assert\NotBlank]
     private $nature;
 
     /**
      * @var     array
-     *
-     * @ORM\Column(type="array")
-     * @Assert\NotBlank
      */
+    #[ORM\Column(type: 'json')]
+    #[Assert\NotBlank]
     private $triplets;
 
     /**
      * @var     array
-     *
-     * @ORM\Column(type="array")
-     * @Assert\NotBlank
      */
+    #[ORM\Column(type: 'json')]
+    #[Assert\NotBlank]
     private $tripletsGroups;
 
     /**
