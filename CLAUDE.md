@@ -28,6 +28,8 @@ MySQL
 
 `bioapi` ne dépend pas directement du package Composer `amelaye/biophp`. Les deux dépôts sont découplés au niveau du code et couplés par le contrat HTTP/JSON-LD.
 
+La version courante est `1.0.0`. Elle est publiée dans OpenAPI et dans le header `X-API-Version`. Les URLs ne sont pas préfixées par une version afin de conserver le contrat historique avec `biophp`.
+
 ## Stack et versions
 
 - PHP : `composer.json` annonce `^8.2`, mais le jeu de dépendances actuellement résolu contient `doctrine/instantiator 2.1.0`, qui requiert PHP `^8.4`. La production utilise PHP 8.5 ; conserver au minimum PHP 8.4 tant que les dépendances ne sont pas recalculées.
@@ -135,6 +137,14 @@ Cas connu : la table `amino` contient historiquement `name1letter` et `name3lett
 
 Sans ces noms explicites, Doctrine ORM 3 cherche `name1_letter` et `name3_letters`, ce qui produit une erreur SQL 1054 sur `/aminos`.
 
+Le même écart existe pour le nom de classe `Pam250MatrixDigit`. La base historique utilise la table `pam250matrix_digit`, tandis que Doctrine ORM 3 déduit `pam250_matrix_digit`. L'entité doit conserver explicitement :
+
+```php
+#[ORM\Table(name: 'pam250matrix_digit')]
+```
+
+Sans ce mapping, `/pam250_matrix_digits` échoue avec une erreur SQL 1146 indiquant que `pam250_matrix_digit` n'existe pas.
+
 La migration `Version20260807140000` convertit les anciens champs Doctrine `array` sérialisés en colonnes JSON natives :
 
 - `type_iiendonuclease.same_pattern` ;
@@ -165,9 +175,12 @@ Pour une base locale jetable :
 
 ```bash
 php bin/console doctrine:database:create --if-not-exists
+php bin/console doctrine:schema:create
 php bin/console doctrine:migrations:migrate --no-interaction
 php bin/console doctrine:fixtures:load --no-interaction
 ```
+
+Le `schema:create` est actuellement nécessaire sur une base totalement neuve, car les anciennes migrations de création du schéma ne sont plus suivies dans le dépôt.
 
 ## Configuration et sécurité
 
@@ -175,6 +188,9 @@ Variables d'environnement attendues :
 
 - `APP_ENV`
 - `APP_SECRET`
+- `API_TITLE` (défaut : `Amelaye BioAPI`)
+- `API_DESCRIPTION`
+- `API_VERSION` (défaut : `1.0.0`)
 - `TRUSTED_PROXIES`
 - `TRUSTED_HOSTS`
 - `CORS_ALLOW_ORIGIN`
@@ -254,6 +270,7 @@ En cas d'erreur 500 limitée à une ressource, consulter d'abord ce log. Si tout
 
 - Préserver le format JSON-LD/Hydra et la clé `hydra:member` tant que `biophp` n'est pas modernisé.
 - Préserver les routes historiques, y compris leurs noms atypiques (`/p_ks`, `/type_i_i_endonucleases`, etc.).
+- Ne pas ajouter de préfixe de version aux URLs sans décision explicite ; la version est actuellement transportée par OpenAPI et `X-API-Version`.
 - Préférer des noms de colonnes Doctrine explicites lorsqu'un schéma historique est concerné.
 - Traiter les fixtures comme des données métier versionnées, pas comme de simples exemples.
 - Ne pas modifier ou purger les données de production pendant un diagnostic.

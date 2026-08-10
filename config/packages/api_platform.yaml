@@ -1,4 +1,7 @@
 api_platform:
+    title: '%env(API_TITLE)%'
+    description: '%env(API_DESCRIPTION)%'
+    version: '%env(API_VERSION)%'
     mapping:
         paths: ['%kernel.project_dir%/src/Entity']
     swagger:

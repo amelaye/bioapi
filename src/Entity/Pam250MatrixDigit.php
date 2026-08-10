@@ -18,6 +18,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 #[ApiResource(operations: [new GetCollection(), new Get()])]
 #[ORM\Entity]
+#[ORM\Table(name: 'pam250matrix_digit')]
 class Pam250MatrixDigit
 {
     /**
