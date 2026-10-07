@@ -81,7 +81,7 @@ add('writable_dirs', [
 // tu veux plutôt déployer 'master'/'main'.
 host('bioapi-prod')
     ->set('deploy_path', '/home/web/{{application}}')
-    ->set('branch', 'develop')
+    ->set('branch', 'master')
     ->setLabels(['stage' => 'prod']);
 
 // ---------------------------------------------------------------------------
