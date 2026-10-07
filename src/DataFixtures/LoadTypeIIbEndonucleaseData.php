@@ -19,7 +19,7 @@ class LoadTypeIIbEndonucleaseData extends Fixture
         $endonuclease = new TypeIIbEndonuclease();
         $endonuclease->setId("AjuI#");
         $endonuclease->setSamePattern(["AjuI"]);
-        $endonuclease->setRecognitionPattern("_NNNNN'NNNNNNNGAANNNNNNNTTGGNNNNNN_NNNNN_'");
+        $endonuclease->setRecognitionPattern("_NNNNN'NNNNNNNGAANNNNNNNTTGGNNNNNN_NNNNN'");
         $endonuclease->setComputingPattern("(............GAA.......TTGG...........|...........CCAA.......TTC............)");
         $endonuclease->setLengthRecognitionPattern(37);
         $endonuclease->setCleavagePosUpper(5);
@@ -29,9 +29,9 @@ class LoadTypeIIbEndonucleaseData extends Fixture
 
         $endonuclease = new TypeIIbEndonuclease();
         $endonuclease->setId("AlfI#");
-        $endonuclease->setSamePattern(["AjuI"]);
-        $endonuclease->setRecognitionPattern("_NN'NNNNNNNNNNCGANNNNNNTGCNNNNNNNNNN_NN'");
-        $endonuclease->setComputingPattern("(............CGA......TGC............|............GCA......TCG............)");
+        $endonuclease->setSamePattern(["AlfI"]);
+        $endonuclease->setRecognitionPattern("_NN'NNNNNNNNNNGCANNNNNNTGCNNNNNNNNNN_NN'");
+        $endonuclease->setComputingPattern("(............GCA......TGC............)");
         $endonuclease->setLengthRecognitionPattern(36);
         $endonuclease->setCleavagePosUpper(2);
         $endonuclease->setCleavagePosLower(-2);
@@ -43,6 +43,17 @@ class LoadTypeIIbEndonucleaseData extends Fixture
         $endonuclease->setSamePattern(["AloI"]);
         $endonuclease->setRecognitionPattern("_NNNNN'NNNNNNNGAACNNNNNNTCCNNNNNNN_NNNNN'");
         $endonuclease->setComputingPattern("(............GAAC......TCC............|............GGA......GTTC............)");
+        $endonuclease->setLengthRecognitionPattern(37);
+        $endonuclease->setCleavagePosUpper(5);
+        $endonuclease->setCleavagePosLower(-5);
+        $endonuclease->setNbNonNBases(7);
+        $manager->persist($endonuclease);
+
+        $endonuclease = new TypeIIbEndonuclease();
+        $endonuclease->setId("ArsI#");
+        $endonuclease->setSamePattern(["ArsI"]);
+        $endonuclease->setRecognitionPattern("_NNNNN'NNNNNNNNGACNNNNNNTTYGNNNNNN_NNNNN'");
+        $endonuclease->setComputingPattern("(.............GAC......TTCG...........|.............GAC......TTTG...........|...........CGAA......GTC.............|...........CAAA......GTC.............)");
         $endonuclease->setLengthRecognitionPattern(37);
         $endonuclease->setCleavagePosUpper(5);
         $endonuclease->setCleavagePosLower(-5);
@@ -119,7 +130,7 @@ class LoadTypeIIbEndonucleaseData extends Fixture
         $endonuclease->setId("CspCI#");
         $endonuclease->setSamePattern(["CspCI"]);
         $endonuclease->setRecognitionPattern("_NN'NNNNNNNNNNNCAANNNNNGTGGNNNNNNNNNN_NN'");
-        $endonuclease->setComputingPattern("(.............CAA.....GTGG............|............GCA.....TCG.............)");
+        $endonuclease->setComputingPattern("(.............CAA.....GTGG............|............CCAC.....TTG.............)");
         $endonuclease->setLengthRecognitionPattern(37);
         $endonuclease->setCleavagePosUpper(2);
         $endonuclease->setCleavagePosLower(-2);
@@ -141,7 +152,7 @@ class LoadTypeIIbEndonucleaseData extends Fixture
         $endonuclease->setId("Hin4I#");
         $endonuclease->setSamePattern(["Hin4I"]);
         $endonuclease->setRecognitionPattern("_NNNNN'NNNNNNNNGAYNNNNNVTCNNNNNNNN_NNNNN'");
-        $endonuclease->setComputingPattern("(.............GAC.....ATC.............|.............GAC.....CTC.............|.............GAC.....GTC.............|.............GAT.....ATC.............|.............GAT.....CTC.............|.............GAT.....GTC.............|.............GAG.....ATC.............|.............GAG.....ATC.............)");
+        $endonuclease->setComputingPattern("(.............GAC.....ATC.............|.............GAC.....CTC.............|.............GAC.....GTC.............|.............GAT.....ATC.............|.............GAT.....CTC.............|.............GAT.....GTC.............|.............GAG.....ATC.............|.............GAG.....GTC.............)");
         $endonuclease->setLengthRecognitionPattern(37);
         $endonuclease->setCleavagePosUpper(5);
         $endonuclease->setCleavagePosLower(-5);
