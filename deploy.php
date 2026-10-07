@@ -107,3 +107,12 @@ after('deploy:failed', 'deploy:unlock');
 
 // Migration de la base avant de basculer le symlink sur la nouvelle release.
 before('deploy:symlink', 'database:migrate');
+
+// La table migration_versions historique a une colonne "version" trop courte
+// pour les noms de classes complets (DoctrineMigrations\VersionXXXX, 191 car.).
+// On aligne d'abord la table de métadonnées sur la configuration.
+task('database:sync_metadata', function () {
+    run('cd {{release_path}} && {{bin/php}} bin/console doctrine:migrations:sync-metadata-storage --no-interaction');
+});
+
+before('database:migrate', 'database:sync_metadata');
