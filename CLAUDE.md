@@ -72,7 +72,7 @@ Chaque classe de `src/Entity` est une `ApiResource` avec uniquement `GetCollecti
 | `ProteinReduction` | `/protein_reductions` | entier auto-généré | alphabet, lettres, motif, nature, réduction, description |
 | `TmBaseStacking` | `/tm_base_stackings` | chaîne | enthalpie et entropie de stacking |
 | `Triplet` | `/triplets` | entier auto-généré | codon/triplet |
-| `TripletSpecie` | `/triplet_species` | entier auto-généré | espèce/nature, triplets JSON et groupes JSON |
+| `TripletSpecie` | `/triplet_species` | entier auto-généré | espèce/nature, numéro de table génétique NCBI (`ncbiTableId`, nullable), triplets JSON et groupes JSON |
 | `TypeIIEndonuclease` | `/type_i_i_endonucleases` | chaîne | motifs et positions de coupure |
 | `TypeIIbEndonuclease` | `/type_i_ib_endonucleases` | chaîne | motifs et positions de coupure |
 | `TypeIIsEndonuclease` | `/type_i_is_endonucleases` | chaîne | motifs et positions de coupure |
@@ -154,6 +154,8 @@ La migration `Version20260807140000` convertit les anciens champs Doctrine `arra
 - `triplet_specie.triplets_groups`.
 
 Cette migration est volontairement rejouable : elle ignore une colonne déjà en JSON. C'est nécessaire parce que les DDL MySQL font des commits implicites et qu'un échec ultérieur lors de l'enregistrement dans `migration_versions` ne restaure pas les colonnes déjà converties.
+
+La migration `Version20261009130000` ajoute `triplet_specie.ncbi_table_id` (numéro de table génétique NCBI, nullable) et numérote les 17 lignes existantes d'après leur `nature` ; elle est rejouable (colonne ajoutée seulement si absente). Les codes génétiques 24, 25, 26, 29, 30, 32 et 33 viennent avec les fixtures, à recharger. Les tables 27, 28 et 31 sont volontairement absentes : leur codon UGA est un stop ou un codon sens selon le contexte.
 
 La table de métadonnées Doctrine s'appelle `migration_versions`. Sa colonne `version` doit rester à 191 caractères afin de stocker les noms de classes complets tels que `DoctrineMigrations\Version20260807140000`.
 
