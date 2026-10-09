@@ -14,8 +14,11 @@ use Doctrine\Persistence\ObjectManager;
 
 class LoadProteinReductions extends Fixture
 {
+    use AssignsFixedIds;
+
     public function load(ObjectManager $manager): void
     {
+        $iId = 0;
         $reduction = new ProteinReduction();
         $reduction->setAlphabet(20);
         $reduction->setLetters("-");
@@ -23,7 +26,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("-");
         $reduction->setReduction("-");
         $reduction->setDescription("Complete alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         /**
          * 2
@@ -35,7 +38,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("P: Hydrophilic");
         $reduction->setReduction("p");
         $reduction->setDescription("Two letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet(2);
@@ -44,7 +47,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("H: Hydrophobic");
         $reduction->setReduction("h");
         $reduction->setDescription("Two letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
 
         /**
@@ -57,7 +60,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("A: Aliphatic");
         $reduction->setReduction("a");
         $reduction->setDescription("Five letters alphabet: Chemical / structural properties");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet(5);
@@ -66,7 +69,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("R: Aromatic");
         $reduction->setReduction("r");
         $reduction->setDescription("Five letters alphabet: Chemical / structural properties");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet(5);
@@ -75,7 +78,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("C: Charged");
         $reduction->setReduction("c");
         $reduction->setDescription("Five letters alphabet: Chemical / structural properties");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet(5);
@@ -84,7 +87,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("T: Tiny");
         $reduction->setReduction("t");
         $reduction->setDescription("Five letters alphabet: Chemical / structural properties");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet(5);
@@ -93,7 +96,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("D: Diverse");
         $reduction->setReduction("d");
         $reduction->setDescription("Five letters alphabet: Chemical / structural properties");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         /**
          * 6
@@ -105,7 +108,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("A: Aliphatic");
         $reduction->setReduction("a");
         $reduction->setDescription("Six letters alphabet: Chemical / structural properties #2");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet(6);
@@ -114,7 +117,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("R: Aromatic");
         $reduction->setReduction("r");
         $reduction->setDescription("Six letters alphabet: Chemical / structural properties #2");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet(6);
@@ -123,7 +126,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("C: Pos. charged");
         $reduction->setReduction("p");
         $reduction->setDescription("Six letters alphabet: Chemical / structural properties #2");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet(6);
@@ -132,7 +135,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("C: Neg. charged");
         $reduction->setReduction("n");
         $reduction->setDescription("Six letters alphabet: Chemical / structural properties #2");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet(6);
@@ -141,7 +144,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("T: Tiny");
         $reduction->setReduction("t");
         $reduction->setDescription("Six letters alphabet: Chemical / structural properties #2");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet(6);
@@ -150,7 +153,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("D: Diverse");
         $reduction->setReduction("d");
         $reduction->setDescription("Six letters alphabet: Chemical / structural properties #2");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         /**
          * 3IMG
@@ -162,7 +165,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("P: Hydrophilic");
         $reduction->setReduction("p");
         $reduction->setDescription("3 IMGT amino acid hydropathy alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("3IMG");
@@ -171,7 +174,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("N: Neutral");
         $reduction->setReduction("n");
         $reduction->setDescription("3 IMGT amino acid hydropathy alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("3IMG");
@@ -180,7 +183,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("H: Hydrophobic");
         $reduction->setReduction("h");
         $reduction->setDescription("3 IMGT amino acid hydropathy alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         /**
          * 5IMG
@@ -192,7 +195,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("G: 60-90");
         $reduction->setReduction("g");
         $reduction->setDescription("5 IMGT amino acid volume alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("5IMG");
@@ -201,7 +204,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("C: 108-117");
         $reduction->setReduction("c");
         $reduction->setDescription("5 IMGT amino acid volume alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("5IMG");
@@ -210,7 +213,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("E: 138-154");
         $reduction->setReduction("e");
         $reduction->setDescription("5 IMGT amino acid volume alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("5IMG");
@@ -219,7 +222,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("M: 162-174");
         $reduction->setReduction("m");
         $reduction->setDescription("5 IMGT amino acid volume alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("5IMG");
@@ -228,7 +231,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("F: 189-228");
         $reduction->setReduction("f");
         $reduction->setDescription("5 IMGT amino acid volume alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
 
         /**
@@ -241,7 +244,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("A: Aliphatic");
         $reduction->setReduction("a");
         $reduction->setDescription("11 IMGT amino acid chemical characteristics alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("11IMG");
@@ -250,7 +253,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("F: Phenylalanine");
         $reduction->setReduction("f");
         $reduction->setDescription("11 IMGT amino acid chemical characteristics alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("11IMG");
@@ -259,7 +262,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("G: Sulfur");
         $reduction->setReduction("c");
         $reduction->setDescription("11 IMGT amino acid chemical characteristics alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("11IMG");
@@ -268,7 +271,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("G: Glycine");
         $reduction->setReduction("g");
         $reduction->setDescription("11 IMGT amino acid chemical characteristics alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("11IMG");
@@ -277,7 +280,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("S: Hydroxyl");
         $reduction->setReduction("s");
         $reduction->setDescription("11 IMGT amino acid chemical characteristics alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("11IMG");
@@ -286,7 +289,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("W: Tryptophan");
         $reduction->setReduction("w");
         $reduction->setDescription("11 IMGT amino acid chemical characteristics alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("11IMG");
@@ -295,7 +298,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("Y: Tyrosine");
         $reduction->setReduction("y");
         $reduction->setDescription("11 IMGT amino acid chemical characteristics alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("11IMG");
@@ -304,7 +307,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("P: Proline");
         $reduction->setReduction("p");
         $reduction->setDescription("11 IMGT amino acid chemical characteristics alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("11IMG");
@@ -313,7 +316,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("A: Acidic");
         $reduction->setReduction("d");
         $reduction->setDescription("11 IMGT amino acid chemical characteristics alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("11IMG");
@@ -322,7 +325,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("N: Amide");
         $reduction->setReduction("n");
         $reduction->setDescription("11 IMGT amino acid chemical characteristics alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("11IMG");
@@ -331,7 +334,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("H: Basic");
         $reduction->setReduction("h");
         $reduction->setDescription("11 IMGT amino acid chemical characteristics alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
 
         /**
@@ -344,7 +347,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("L: Large hydrophobic");
         $reduction->setReduction("l");
         $reduction->setDescription("Murphy et al, 2000; 15 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy15");
@@ -353,7 +356,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("C");
         $reduction->setReduction("c");
         $reduction->setDescription("Murphy et al, 2000; 15 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy15");
@@ -362,7 +365,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("A");
         $reduction->setReduction("a");
         $reduction->setDescription("Murphy et al, 2000; 15 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy15");
@@ -371,7 +374,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("G");
         $reduction->setReduction("g");
         $reduction->setDescription("Murphy et al, 2000; 15 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy15");
@@ -380,7 +383,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("S");
         $reduction->setReduction("s");
         $reduction->setDescription("Murphy et al, 2000; 15 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy15");
@@ -389,7 +392,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("T");
         $reduction->setReduction("t");
         $reduction->setDescription("Murphy et al, 2000; 15 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy15");
@@ -398,7 +401,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("P");
         $reduction->setReduction("p");
         $reduction->setDescription("Murphy et al, 2000; 15 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy15");
@@ -407,7 +410,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("F: Hydrophobic/aromatic sidechains");
         $reduction->setReduction("f");
         $reduction->setDescription("Murphy et al, 2000; 15 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy15");
@@ -416,7 +419,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("W");
         $reduction->setReduction("w");
         $reduction->setDescription("Murphy et al, 2000; 15 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy15");
@@ -425,7 +428,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("E");
         $reduction->setReduction("e");
         $reduction->setDescription("Murphy et al, 2000; 15 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy15");
@@ -434,7 +437,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("D");
         $reduction->setReduction("d");
         $reduction->setDescription("Murphy et al, 2000; 15 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy15");
@@ -443,7 +446,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("N");
         $reduction->setReduction("n");
         $reduction->setDescription("Murphy et al, 2000; 15 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy15");
@@ -452,7 +455,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("Q");
         $reduction->setReduction("q");
         $reduction->setDescription("Murphy et al, 2000; 15 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy15");
@@ -461,7 +464,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("K: Long-chain positively charged");
         $reduction->setReduction("k");
         $reduction->setDescription("Murphy et al, 2000; 15 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy15");
@@ -470,7 +473,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("H");
         $reduction->setReduction("h");
         $reduction->setDescription("Murphy et al, 2000; 15 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         /**
          * Murphy10
@@ -482,7 +485,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("L: Large hydrophobic");
         $reduction->setReduction("l");
         $reduction->setDescription("Murphy et al, 2000; 10 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy10");
@@ -491,7 +494,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("C");
         $reduction->setReduction("c");
         $reduction->setDescription("Murphy et al, 2000; 10 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy10");
@@ -500,7 +503,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("A");
         $reduction->setReduction("a");
         $reduction->setDescription("Murphy et al, 2000; 10 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy10");
@@ -509,7 +512,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("G");
         $reduction->setReduction("g");
         $reduction->setDescription("Murphy et al, 2000; 10 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy10");
@@ -518,7 +521,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("Polar");
         $reduction->setReduction("s");
         $reduction->setDescription("Murphy et al, 2000; 10 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy10");
@@ -527,7 +530,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("P");
         $reduction->setReduction("p");
         $reduction->setDescription("Murphy et al, 2000; 10 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy10");
@@ -536,7 +539,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("Hydrophobic/aromatic sidechains");
         $reduction->setReduction("f");
         $reduction->setDescription("Murphy et al, 2000; 10 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy10");
@@ -545,7 +548,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("Charged / polar");
         $reduction->setReduction("e");
         $reduction->setDescription("Murphy et al, 2000; 10 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy10");
@@ -554,7 +557,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("Long-chain positively charged");
         $reduction->setReduction("k");
         $reduction->setDescription("Murphy et al, 2000; 10 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy10");
@@ -563,7 +566,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("H");
         $reduction->setReduction("h");
         $reduction->setDescription("Murphy et al, 2000; 10 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         /**
          * Murphy 4
@@ -575,7 +578,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("L: Hydrophobic");
         $reduction->setReduction("l");
         $reduction->setDescription("Murphy et al, 2000; 4 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy4");
@@ -584,7 +587,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("A");
         $reduction->setReduction("a");
         $reduction->setDescription("Murphy et al, 2000; 4 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy4");
@@ -593,7 +596,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("F: Hydrophobic/aromatic sidechains");
         $reduction->setReduction("f");
         $reduction->setDescription("Murphy et al, 2000; 4 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy4");
@@ -602,7 +605,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("E");
         $reduction->setReduction("e");
         $reduction->setDescription("Murphy et al, 2000; 4 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
 
         /**
@@ -615,7 +618,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("P: Hydrophobic");
         $reduction->setReduction("p");
         $reduction->setDescription("Murphy et al, 2000; 2 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Murphy2");
@@ -624,7 +627,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("E: Hydrophilic");
         $reduction->setReduction("e");
         $reduction->setDescription("Murphy et al, 2000; 2 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
 
         /**
@@ -637,7 +640,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("I");
         $reduction->setReduction("i");
         $reduction->setDescription("Wang & Wang, 1999; 5 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Wang5");
@@ -646,7 +649,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("A");
         $reduction->setReduction("a");
         $reduction->setDescription("Wang & Wang, 1999; 5 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Wang5");
@@ -655,7 +658,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("G");
         $reduction->setReduction("g");
         $reduction->setDescription("Wang & Wang, 1999; 5 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Wang5");
@@ -664,7 +667,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("E");
         $reduction->setReduction("e");
         $reduction->setDescription("Wang & Wang, 1999; 5 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Wang5");
@@ -673,7 +676,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("K");
         $reduction->setReduction("k");
         $reduction->setDescription("Wang & Wang, 1999; 5 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         /**
          * WANG 5V
@@ -685,7 +688,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("I");
         $reduction->setReduction("i");
         $reduction->setDescription("Wang & Wang, 1999; 5 letters variant alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Wang5v");
@@ -694,7 +697,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("L");
         $reduction->setReduction("l");
         $reduction->setDescription("Wang & Wang, 1999; 5 letters variant alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Wang5v");
@@ -703,7 +706,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("A");
         $reduction->setReduction("a");
         $reduction->setDescription("Wang & Wang, 1999; 5 letters variant alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Wang5v");
@@ -712,7 +715,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("E");
         $reduction->setReduction("e");
         $reduction->setDescription("Wang & Wang, 1999; 5 letters variant alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Wang5v");
@@ -721,7 +724,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("K");
         $reduction->setReduction("k");
         $reduction->setDescription("Wang & Wang, 1999; 5 letters variant alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         /**
          * Wang3
@@ -733,7 +736,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("I");
         $reduction->setReduction("i");
         $reduction->setDescription("Wang & Wang, 1999; 3 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Wang3");
@@ -742,7 +745,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("A");
         $reduction->setReduction("a");
         $reduction->setDescription("Wang & Wang, 1999; 3 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Wang3");
@@ -751,7 +754,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("E");
         $reduction->setReduction("e");
         $reduction->setDescription("Wang & Wang, 1999; 3 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         /**
          * Wang 2
@@ -763,7 +766,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("I");
         $reduction->setReduction("i");
         $reduction->setDescription("Wang & Wang, 1999; 2 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Wang2");
@@ -772,7 +775,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("A");
         $reduction->setReduction("a");
         $reduction->setDescription("Wang & Wang, 1999; 2 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         /**
          * Li10
@@ -784,7 +787,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("C");
         $reduction->setReduction("c");
         $reduction->setDescription("Li et al, 2003; 10 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Li10");
@@ -793,7 +796,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("Y");
         $reduction->setReduction("y");
         $reduction->setDescription("Li et al, 2003; 10 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Li10");
@@ -802,7 +805,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("L");
         $reduction->setReduction("l");
         $reduction->setDescription("Li et al, 2003; 10 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Li10");
@@ -811,7 +814,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("V");
         $reduction->setReduction("v");
         $reduction->setDescription("Li et al, 2003; 10 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Li10");
@@ -820,7 +823,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("G");
         $reduction->setReduction("g");
         $reduction->setDescription("Li et al, 2003; 10 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Li10");
@@ -829,7 +832,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("P");
         $reduction->setReduction("p");
         $reduction->setDescription("Li et al, 2003; 10 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Li10");
@@ -838,7 +841,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("S");
         $reduction->setReduction("s");
         $reduction->setDescription("Li et al, 2003; 10 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Li10");
@@ -847,7 +850,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("N");
         $reduction->setReduction("n");
         $reduction->setDescription("Li et al, 2003; 10 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Li10");
@@ -856,7 +859,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("E");
         $reduction->setReduction("e");
         $reduction->setDescription("Li et al, 2003; 10 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Li10");
@@ -865,7 +868,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("K");
         $reduction->setReduction("k");
         $reduction->setDescription("Li et al, 2003; 10 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         /**
          * Li5
@@ -877,7 +880,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("Y");
         $reduction->setReduction("y");
         $reduction->setDescription("Li et al, 2003; 5 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Li5");
@@ -886,7 +889,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("I");
         $reduction->setReduction("i");
         $reduction->setDescription("Li et al, 2003; 5 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Li5");
@@ -895,7 +898,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("G");
         $reduction->setReduction("g");
         $reduction->setDescription("Li et al, 2003; 5 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Li5");
@@ -904,7 +907,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("S");
         $reduction->setReduction("s");
         $reduction->setDescription("Li et al, 2003; 5 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Li5");
@@ -913,7 +916,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("E");
         $reduction->setReduction("e");
         $reduction->setDescription("Li et al, 2003; 5 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         /**
          * Li4
@@ -925,7 +928,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("Y");
         $reduction->setReduction("y");
         $reduction->setDescription("Li et al, 2003; 4 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Li4");
@@ -934,7 +937,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("I");
         $reduction->setReduction("i");
         $reduction->setDescription("Li et al, 2003; 4 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Li4");
@@ -943,7 +946,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("S");
         $reduction->setReduction("s");
         $reduction->setDescription("Li et al, 2003; 4 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Li4");
@@ -952,7 +955,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("E");
         $reduction->setReduction("e");
         $reduction->setDescription("Li et al, 2003; 4 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         /**
          * Li3
@@ -964,7 +967,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("I");
         $reduction->setReduction("i");
         $reduction->setDescription("Li et al, 2003; 3 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Li3");
@@ -973,7 +976,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("S");
         $reduction->setReduction("s");
         $reduction->setDescription("Li et al, 2003; 3 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("Li3");
@@ -982,7 +985,7 @@ class LoadProteinReductions extends Fixture
         $reduction->setNature("E");
         $reduction->setReduction("e");
         $reduction->setDescription("Li et al, 2003; 3 letters alphabet");
-        $manager->persist($reduction);
+        $this->persistWithId($manager, $reduction, ++$iId);
 
         $manager->flush();
     }

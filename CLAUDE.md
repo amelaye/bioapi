@@ -173,6 +173,8 @@ Les classes `Load*Data` contiennent le référentiel biologique : acides aminés
 
 Les masses (acides aminés libres, résidus, nucléotides, eau) sont celles de Biopython (`Bio.Data.IUPACData`, masses moyennes, eau 18,0153), avec quatre décimales : les méthodes `molwt()` de `biophp` sont fixées sur `Bio.SeqUtils.molecular_weight`. Ne pas les remplacer par une autre source (OligoCalc, ExPASy, ancien BioPHP). Les autres données suivent leur source primaire : tables NCBI pour les codes génétiques, REBASE pour les enzymes, Dayhoff 1978 pour PAM250, SantaLucia 1998 pour les paramètres de Tm. Les échantillons `Tests/**/samples` de `biophp` reproduisent ces fixtures : une correction se fait des deux côtés, et `Tests/Api/BiologicalReferenceDataTest.php` et `ReferenceDataConsistencyTest.php` la vérifient.
 
+Les fixtures des entités à identifiant auto-incrémenté (`Element`, `Nucleotid`, `ProteinReduction`, `Triplet`, `TripletSpecie`) numérotent elles-mêmes leurs lignes, dans l'ordre où elles les persistent (trait `AssignsFixedIds`) : un rechargement redonne toujours les mêmes identifiants, quel que soit le compteur de la base. C'est ce qui garantit que `/elements/6` reste l'eau. Ajouter une ligne à l'une de ces fixtures la place à la fin, pour ne pas décaler les identifiants existants. Il ne faut ni `TRUNCATE` à la main, ni `--purge-with-truncate` (le `TRUNCATE` valide la transaction du chargeur, qui échoue alors).
+
 Le chargement des fixtures remplace normalement les données existantes. Ne jamais exécuter `doctrine:fixtures:load` sur la production sans demande explicite, sauvegarde vérifiée et compréhension des identifiants attendus par `biophp`.
 
 Pour une base locale jetable :

@@ -14,8 +14,11 @@ use Doctrine\Persistence\ObjectManager;
 
 class LoadTripletsSpeciesData extends Fixture
 {
+    use AssignsFixedIds;
+
     public function load(ObjectManager $manager): void
     {
+        $iId = 0;
         $triplets_standard = [
             '(TTT |TTC )',
             '(TTA |TTG |CT. )',
@@ -446,7 +449,7 @@ class LoadTripletsSpeciesData extends Fixture
         $triplet->setTripletsGroups($triplets_standard);
         $triplet->setTriplets(["TTY","YTN","ATH","ATG","GTN","WSN","CCN","ACN","GCN","TAY","TRR",
             "CAY","CAR","AAY","AAR","GAY","GAR","TGY","TGG","MGN","GGN","NNN"]);
-        $manager->persist($triplet);
+        $this->persistWithId($manager, $triplet, ++$iId);
 
         $triplet = new TripletSpecie();
         $triplet->setNature("vertebrate mitochondrial");
@@ -454,7 +457,7 @@ class LoadTripletsSpeciesData extends Fixture
         $triplet->setTripletsGroups($triplets_vertebrate_mitochondrial);
         $triplet->setTriplets(["TTY","YTN","ATY","ATR","GTN","WSN","CCN","ACN","GCN","TAY","WRR",
             "CAY","CAR","AAY","AAR","GAY","GAR","TGY","TGR","CGN","GGN","NNN"]);
-        $manager->persist($triplet);
+        $this->persistWithId($manager, $triplet, ++$iId);
 
         $triplet = new TripletSpecie();
         $triplet->setNature("yeast mitochondrial");
@@ -462,7 +465,7 @@ class LoadTripletsSpeciesData extends Fixture
         $triplet->setTripletsGroups($triplets_yeast_mitochondrial);
         $triplet->setTriplets(["TTY","TTR","ATY","ATR","GTN","WSN","CCN","MYN","GCN","TAY","TAR","CAY",
             "CAR","AAY","AAR","GAY","GAR","TGY","TGR","MGN","GGN","NNN"]);
-        $manager->persist($triplet);
+        $this->persistWithId($manager, $triplet, ++$iId);
 
         $triplet = new TripletSpecie();
         $triplet->setNature("mold protozoan coelenterate mitochondrial");
@@ -471,7 +474,7 @@ class LoadTripletsSpeciesData extends Fixture
         $triplet->setTriplets(["TTY","YTN","ATH","ATG","GTN","WSN","CCN","ACN",
             "GCN","TAY","TAR","CAY","CAR","AAY","AAR","GAY",
             "GAR","TGY","TGR","MGN","GGN","NNN"]);
-        $manager->persist($triplet);
+        $this->persistWithId($manager, $triplet, ++$iId);
 
         $triplet = new TripletSpecie();
         $triplet->setNature("invertebrate mitochondrial");
@@ -479,7 +482,7 @@ class LoadTripletsSpeciesData extends Fixture
         $triplet->setTripletsGroups($triplets_invertebrate_mitochondrial);
         $triplet->setTriplets(["TTY","YTN","ATY","ATR","GTN","WSN","CCN","ACN","GCN","TAY","TAR",
             "CAY","CAR","AAY","AAR","GAY","GAR","TGY","TGR","CGN","GGN","NNN"]);
-        $manager->persist($triplet);
+        $this->persistWithId($manager, $triplet, ++$iId);
 
         $triplet = new TripletSpecie();
         $triplet->setNature("ciliate dasycladacean hexamita nuclear");
@@ -488,7 +491,7 @@ class LoadTripletsSpeciesData extends Fixture
         $triplet->setTriplets(["TTY","YTN","ATH","ATG","GTN","WSN","CCN","ACN","GCN",
             "TAY","TGA","CAY","YAR","AAY","AAR","GAY","GAR","TGY",
             "TGG","MGN","GGN","NNN"]);
-        $manager->persist($triplet);
+        $this->persistWithId($manager, $triplet, ++$iId);
 
         $triplet = new TripletSpecie();
         $triplet->setNature("echinoderm mitochondrial");
@@ -496,7 +499,7 @@ class LoadTripletsSpeciesData extends Fixture
         $triplet->setTripletsGroups($triplets_echinoderm_mitochondrial);
         $triplet->setTriplets(["TTY","YTN","ATH","ATG","GTN","WSN","CCN","ACN","GCN","TAY","TAR",
             "CAY","CAR","AAH","AAG","GAY","GAR","TGY","TGR","CGN","GGN","NNN"]);
-        $manager->persist($triplet);
+        $this->persistWithId($manager, $triplet, ++$iId);
 
         $triplet = new TripletSpecie();
         $triplet->setNature("euplotid nuclear");
@@ -504,7 +507,7 @@ class LoadTripletsSpeciesData extends Fixture
         $triplet->setTripletsGroups($triplets_euplotid_nuclear);
         $triplet->setTriplets(["TTY","YTN","ATH","ATG","GTN","WSN","CCN","ACN","GCN","TAY","TAR","CAY","CAR",
             "AAY","AAR","GAY","GAR","TGH","TGG","MGN","GGN","NNN"]);
-        $manager->persist($triplet);
+        $this->persistWithId($manager, $triplet, ++$iId);
 
         $triplet = new TripletSpecie();
         $triplet->setNature("bacterial plant plastid");
@@ -512,7 +515,7 @@ class LoadTripletsSpeciesData extends Fixture
         $triplet->setTripletsGroups($triplets_bacterial_plant_plastid);
         $triplet->setTriplets(["TTY","YTN","ATH","ATG","GTN","WSN","CCN","ACN","GCN","TAY","TRR",
             "CAY","CAR","AAY","AAR","GAY","GAR","TGY","TGG","MGN","GGN","NNN"]);
-        $manager->persist($triplet);
+        $this->persistWithId($manager, $triplet, ++$iId);
 
         $triplet = new TripletSpecie();
         $triplet->setNature("alternative yeast nuclear");
@@ -520,7 +523,7 @@ class LoadTripletsSpeciesData extends Fixture
         $triplet->setTripletsGroups($triplets_alternative_yeast_nuclear);
         $triplet->setTriplets(["TTY","YTN","ATH","ATG","GTN","HBN","CCN","ACN","GCN","TAY","TRR",
             "CAY","CAR","AAY","AAR","GAY","GAR","TGY","TGG","MGN","GGN","NNN"]);
-        $manager->persist($triplet);
+        $this->persistWithId($manager, $triplet, ++$iId);
 
         $triplet = new TripletSpecie();
         $triplet->setNature("ascidian mitochondria");
@@ -528,7 +531,7 @@ class LoadTripletsSpeciesData extends Fixture
         $triplet->setTripletsGroups($triplets_ascidian_mitochondria);
         $triplet->setTriplets(["TTY","YTN","ATY","ATR","GTN","WSN","CCN","ACN","GCN","TAY","TAR","CAY",
             "CAR","AAY","AAR","GAY","GAR","TGY","TGR","CGN","RGN","NNN"]);
-        $manager->persist($triplet);
+        $this->persistWithId($manager, $triplet, ++$iId);
 
         $triplet = new TripletSpecie();
         $triplet->setNature("flatworm mitochondrial");
@@ -536,7 +539,7 @@ class LoadTripletsSpeciesData extends Fixture
         $triplet->setTripletsGroups($triplets_flatworm_mitochondrial);
         $triplet->setTriplets(["TTY","YTN","ATH","ATG","GTN","WSN","CCN","ACN","GCN","TAH","TAG","CAY",
             "CAR","AAH","AAG","GAY","GAR","TGY","TGR","CGN","GGN","NNN"]);
-        $manager->persist($triplet);
+        $this->persistWithId($manager, $triplet, ++$iId);
 
         $triplet = new TripletSpecie();
         $triplet->setNature("blepharisma macronuclear");
@@ -544,7 +547,7 @@ class LoadTripletsSpeciesData extends Fixture
         $triplet->setTripletsGroups($triplets_blepharisma_macronuclear);
         $triplet->setTriplets(["TTY","YTN","ATH","ATG","GTN","WSN","CCN","ACN","GCN","TAY","TRA","CAY",
             "YAR","AAY","AAR","GAY","GAR","TGY","TGG","MGN","GGN","NNN"]);
-        $manager->persist($triplet);
+        $this->persistWithId($manager, $triplet, ++$iId);
 
         $triplet = new TripletSpecie();
         $triplet->setNature("chlorophycean mitochondrial");
@@ -552,7 +555,7 @@ class LoadTripletsSpeciesData extends Fixture
         $triplet->setTripletsGroups($triplets_chlorophycean_mitochondrial);
         $triplet->setTriplets(["TTY","YWN","ATH","ATG","GTN","WSN","CCN","ACN","GCN","TAY","TRA",
             "CAY","CAR","AAY","AAR","GAY","GAR","TGY","TGG","MGN","GGN","NNN"]);
-        $manager->persist($triplet);
+        $this->persistWithId($manager, $triplet, ++$iId);
 
         $triplet = new TripletSpecie();
         $triplet->setNature("trematode mitochondrial");
@@ -560,7 +563,7 @@ class LoadTripletsSpeciesData extends Fixture
         $triplet->setTripletsGroups($triplets_trematode_mitochondrial);
         $triplet->setTriplets(["TTY","YTN","ATY","ATR","GTN","WSN","CCN","ACN","GCN","TAY","TAR","CAY",
             "CAR","AAH","AAG","GAY","GAR","TGY","TGR","CGN","GGN","NNN"]);
-        $manager->persist($triplet);
+        $this->persistWithId($manager, $triplet, ++$iId);
 
         $triplet = new TripletSpecie();
         $triplet->setNature("scenedesmus obliquus mitochondrial");
@@ -569,7 +572,7 @@ class LoadTripletsSpeciesData extends Fixture
         $triplet->setTriplets(["TTY","YWN","ATH","ATG","GTN","WSB","CCN","ACN","GCN","TAY",
             "TVA","CAY","CAR","AAY","AAR","GAY","GAR","TGY","TGG","MGN",
             "GGN","NNN"]);
-        $manager->persist($triplet);
+        $this->persistWithId($manager, $triplet, ++$iId);
 
         $triplet = new TripletSpecie();
         $triplet->setNature("thraustochytrium mitochondrial code");
@@ -578,7 +581,7 @@ class LoadTripletsSpeciesData extends Fixture
         $triplet->setTriplets(["TTY","YTN","ATH","ATG","GTN","WSN","CCN","ACN","GCN","TAY",
             "TDR","CAY","CAR","AAY","AAR","GAY","GAR","TGY","TGG","MGN",
             "GGN","NNN"]);
-        $manager->persist($triplet);
+        $this->persistWithId($manager, $triplet, ++$iId);
 
         // NCBI genetic codes 24 to 33 (gc.prt, version 4.6). Tables 27, 28 and 31 are left out : their
         // UGA is a stop or a sense codon according to the context, which a single group per amino
@@ -765,7 +768,7 @@ class LoadTripletsSpeciesData extends Fixture
         $triplet->setTriplets(["TTY","YTN","ATH","ATG","GTN","WSN","CCN","ACN","GCN","TAY",
             "TAR","CAY","CAR","AAY","ARR","GAY","GAR","TGY","TGR","CGN",
             "GGN","NNN"]);
-        $manager->persist($triplet);
+        $this->persistWithId($manager, $triplet, ++$iId);
 
         $triplet = new TripletSpecie();
         $triplet->setNature("candidate division sr1 and gracilibacteria");
@@ -774,7 +777,7 @@ class LoadTripletsSpeciesData extends Fixture
         $triplet->setTriplets(["TTY","YTN","ATH","ATG","GTN","WSN","CCN","ACN","GCN","TAY",
             "TAR","CAY","CAR","AAY","AAR","GAY","GAR","TGY","TGG","MGN",
             "KGN","NNN"]);
-        $manager->persist($triplet);
+        $this->persistWithId($manager, $triplet, ++$iId);
 
         $triplet = new TripletSpecie();
         $triplet->setNature("pachysolen tannophilus nuclear");
@@ -783,7 +786,7 @@ class LoadTripletsSpeciesData extends Fixture
         $triplet->setTriplets(["TTY","YTN","ATH","ATG","GTN","WSN","CCN","ACN","SYN","TAY",
             "TRR","CAY","CAR","AAY","AAR","GAY","GAR","TGY","TGG","MGN",
             "GGN","NNN"]);
-        $manager->persist($triplet);
+        $this->persistWithId($manager, $triplet, ++$iId);
 
         $triplet = new TripletSpecie();
         $triplet->setNature("mesodinium nuclear");
@@ -792,7 +795,7 @@ class LoadTripletsSpeciesData extends Fixture
         $triplet->setTriplets(["TTY","YTN","ATH","ATG","GTN","WSN","CCN","ACN","GCN","TAN",
             "TGA","CAY","CAR","AAY","AAR","GAY","GAR","TGY","TGG","MGN",
             "GGN","NNN"]);
-        $manager->persist($triplet);
+        $this->persistWithId($manager, $triplet, ++$iId);
 
         $triplet = new TripletSpecie();
         $triplet->setNature("peritrich nuclear");
@@ -801,7 +804,7 @@ class LoadTripletsSpeciesData extends Fixture
         $triplet->setTriplets(["TTY","YTN","ATH","ATG","GTN","WSN","CCN","ACN","GCN","TAY",
             "TGA","CAY","CAR","AAY","AAR","GAY","KAR","TGY","TGG","MGN",
             "GGN","NNN"]);
-        $manager->persist($triplet);
+        $this->persistWithId($manager, $triplet, ++$iId);
 
         $triplet = new TripletSpecie();
         $triplet->setNature("balanophoraceae plastid");
@@ -810,7 +813,7 @@ class LoadTripletsSpeciesData extends Fixture
         $triplet->setTriplets(["TTY","YTN","ATH","ATG","GTN","WSN","CCN","ACN","GCN","TAY",
             "TRA","CAY","CAR","AAY","AAR","GAY","GAR","TGY","TRG","MGN",
             "GGN","NNN"]);
-        $manager->persist($triplet);
+        $this->persistWithId($manager, $triplet, ++$iId);
 
         $triplet = new TripletSpecie();
         $triplet->setNature("cephalodiscidae mitochondrial");
@@ -819,7 +822,7 @@ class LoadTripletsSpeciesData extends Fixture
         $triplet->setTriplets(["TTY","YTN","ATH","ATG","GTN","WSN","CCN","ACN","GCN","TAH",
             "TAG","CAY","CAR","AAY","ARR","GAY","GAR","TGY","TGR","CGN",
             "GGN","NNN"]);
-        $manager->persist($triplet);
+        $this->persistWithId($manager, $triplet, ++$iId);
 
         $manager->flush();
     }

@@ -20,37 +20,40 @@ use Doctrine\Persistence\ObjectManager;
  */
 class LoadElementData extends Fixture
 {
+    use AssignsFixedIds;
+
     public function load(ObjectManager $manager): void
     {
+        $iId = 0;
         $element = new Element();
         $element->setName("carbone");
         $element->setWeight(12.01);
-        $manager->persist($element);
+        $this->persistWithId($manager, $element, ++$iId);
 
         $element = new Element();
         $element->setName("oxygene");
         $element->setWeight(16.00);
-        $manager->persist($element);
+        $this->persistWithId($manager, $element, ++$iId);
 
         $element = new Element();
         $element->setName("azote");
         $element->setWeight(14.01);
-        $manager->persist($element);
+        $this->persistWithId($manager, $element, ++$iId);
 
         $element = new Element();
         $element->setName("hydrogene");
         $element->setWeight(1.01);
-        $manager->persist($element);
+        $this->persistWithId($manager, $element, ++$iId);
 
         $element = new Element();
         $element->setName("phosphore");
         $element->setWeight(30.97);
-        $manager->persist($element);
+        $this->persistWithId($manager, $element, ++$iId);
 
         $element = new Element();
         $element->setName("water");
         $element->setWeight(18.0153);
-        $manager->persist($element);
+        $this->persistWithId($manager, $element, ++$iId);
 
         $manager->flush();
     }
