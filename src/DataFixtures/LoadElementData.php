@@ -33,7 +33,7 @@ class LoadElementData extends Fixture
         $manager->persist($element);
 
         $element = new Element();
-        $element->setName("nitrate");
+        $element->setName("azote");
         $element->setWeight(14.01);
         $manager->persist($element);
 
@@ -49,7 +49,7 @@ class LoadElementData extends Fixture
 
         $element = new Element();
         $element->setName("water");
-        $element->setWeight(18.015);
+        $element->setWeight(18.0153);
         $manager->persist($element);
 
         $manager->flush();

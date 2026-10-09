@@ -169,6 +169,8 @@ Pour toute évolution de schéma :
 
 Les classes `Load*Data` contiennent le référentiel biologique : acides aminés, éléments, nucléotides, pK, matrice PAM250, réductions protéiques, triplets, espèces, endonucléases, fournisseurs et paramètres thermodynamiques.
 
+Les masses (acides aminés libres, résidus, nucléotides, eau) sont celles de Biopython (`Bio.Data.IUPACData`, masses moyennes, eau 18,0153), avec quatre décimales : les méthodes `molwt()` de `biophp` sont fixées sur `Bio.SeqUtils.molecular_weight`. Ne pas les remplacer par une autre source (OligoCalc, ExPASy, ancien BioPHP). Les autres données suivent leur source primaire : tables NCBI pour les codes génétiques, REBASE pour les enzymes, Dayhoff 1978 pour PAM250, SantaLucia 1998 pour les paramètres de Tm. Les échantillons `Tests/**/samples` de `biophp` reproduisent ces fixtures : une correction se fait des deux côtés, et `Tests/Api/BiologicalReferenceDataTest.php` et `ReferenceDataConsistencyTest.php` la vérifient.
+
 Le chargement des fixtures remplace normalement les données existantes. Ne jamais exécuter `doctrine:fixtures:load` sur la production sans demande explicite, sauvegarde vérifiée et compréhension des identifiants attendus par `biophp`.
 
 Pour une base locale jetable :

@@ -261,7 +261,7 @@ class LoadTripletData extends Fixture
         $manager->persist($triplet);
 
         $triplet = new Triplet();
-        $triplet->setTriplet("GCG");
+        $triplet->setTriplet("GGC");
         $manager->persist($triplet);
 
         $triplet = new Triplet();

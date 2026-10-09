@@ -21,9 +21,9 @@ class LoadAminoData extends Fixture
         $amino->setName("Alanine");
         $amino->setName1Letter('A');
         $amino->setName3Letters('Ala');
-        $amino->setWeight1(89.09);
-        $amino->setWeight2(89.09);
-        $amino->setResidueMolWeight(71.07);
+        $amino->setWeight1(89.0932);
+        $amino->setWeight2(89.0932);
+        $amino->setResidueMolWeight(71.0779);
         $manager->persist($amino);
 
         $amino = new Amino();
@@ -31,8 +31,9 @@ class LoadAminoData extends Fixture
         $amino->setName("Aspartate or asparagine");
         $amino->setName1Letter('B');
         $amino->setName3Letters('N/A');
-        $amino->setWeight1(132.12);
-        $amino->setWeight2(132.1);
+        $amino->setWeight1(132.1179);
+        $amino->setWeight2(133.1027);
+        $amino->setResidueMolWeight(114.1026);
         $manager->persist($amino);
 
         $amino = new Amino();
@@ -40,9 +41,9 @@ class LoadAminoData extends Fixture
         $amino->setName("Cysteine");
         $amino->setName1Letter('C');
         $amino->setName3Letters('Cys');
-        $amino->setWeight1(121.15);
-        $amino->setWeight2(121.15);
-        $amino->setResidueMolWeight(103.10);
+        $amino->setWeight1(121.1582);
+        $amino->setWeight2(121.1582);
+        $amino->setResidueMolWeight(103.1429);
         $manager->persist($amino);
 
         $amino = new Amino();
@@ -50,9 +51,9 @@ class LoadAminoData extends Fixture
         $amino->setName("Aspartic acid");
         $amino->setName1Letter('D');
         $amino->setName3Letters('Asp');
-        $amino->setWeight1(133.1);
-        $amino->setWeight2(133.1);
-        $amino->setResidueMolWeight(115.08);
+        $amino->setWeight1(133.1027);
+        $amino->setWeight2(133.1027);
+        $amino->setResidueMolWeight(115.0874);
         $manager->persist($amino);
 
         $amino = new Amino();
@@ -60,9 +61,9 @@ class LoadAminoData extends Fixture
         $amino->setName("Glutamic acid");
         $amino->setName1Letter('E');
         $amino->setName3Letters('Glu');
-        $amino->setWeight1(147.13);
-        $amino->setWeight2(147.13);
-        $amino->setResidueMolWeight(129.11);
+        $amino->setWeight1(147.1293);
+        $amino->setWeight2(147.1293);
+        $amino->setResidueMolWeight(129.114);
         $manager->persist($amino);
 
         $amino = new Amino();
@@ -70,9 +71,9 @@ class LoadAminoData extends Fixture
         $amino->setName("Phenylalanine");
         $amino->setName1Letter('F');
         $amino->setName3Letters('Phe');
-        $amino->setWeight1(165.19);
-        $amino->setWeight2(165.19);
-        $amino->setResidueMolWeight(147.17);
+        $amino->setWeight1(165.1891);
+        $amino->setWeight2(165.1891);
+        $amino->setResidueMolWeight(147.1738);
         $manager->persist($amino);
 
         $amino = new Amino();
@@ -80,9 +81,9 @@ class LoadAminoData extends Fixture
         $amino->setName("Glycine");
         $amino->setName1Letter('G');
         $amino->setName3Letters('Gly');
-        $amino->setWeight1(75.07);
-        $amino->setWeight2(75.07);
-        $amino->setResidueMolWeight(57.05);
+        $amino->setWeight1(75.0666);
+        $amino->setWeight2(75.0666);
+        $amino->setResidueMolWeight(57.0513);
         $manager->persist($amino);
 
         $amino = new Amino();
@@ -90,9 +91,9 @@ class LoadAminoData extends Fixture
         $amino->setName("Histidine");
         $amino->setName1Letter('H');
         $amino->setName3Letters('His');
-        $amino->setWeight1(155.16);
-        $amino->setWeight2(155.16);
-        $amino->setResidueMolWeight(137.14);
+        $amino->setWeight1(155.1546);
+        $amino->setWeight2(155.1546);
+        $amino->setResidueMolWeight(137.1393);
         $manager->persist($amino);
 
         $amino = new Amino();
@@ -100,9 +101,9 @@ class LoadAminoData extends Fixture
         $amino->setName("Isoleucine");
         $amino->setName1Letter('I');
         $amino->setName3Letters('Ile');
-        $amino->setWeight1(131.18);
-        $amino->setWeight2(131.18);
-        $amino->setResidueMolWeight(113.15);
+        $amino->setWeight1(131.1729);
+        $amino->setWeight2(131.1729);
+        $amino->setResidueMolWeight(113.1576);
         $manager->persist($amino);
 
         $amino = new Amino();
@@ -110,9 +111,9 @@ class LoadAminoData extends Fixture
         $amino->setName("Lysine");
         $amino->setName1Letter('K');
         $amino->setName3Letters('Lys');
-        $amino->setWeight1(146.19);
-        $amino->setWeight2(146.19);
-        $amino->setResidueMolWeight(128.17);
+        $amino->setWeight1(146.1876);
+        $amino->setWeight2(146.1876);
+        $amino->setResidueMolWeight(128.1723);
         $manager->persist($amino);
 
         $amino = new Amino();
@@ -120,9 +121,9 @@ class LoadAminoData extends Fixture
         $amino->setName("Leucine");
         $amino->setName1Letter('L');
         $amino->setName3Letters('Leu');
-        $amino->setWeight1(131.18);
-        $amino->setWeight2(131.18);
-        $amino->setResidueMolWeight(113.15);
+        $amino->setWeight1(131.1729);
+        $amino->setWeight2(131.1729);
+        $amino->setResidueMolWeight(113.1576);
         $manager->persist($amino);
 
         $amino = new Amino();
@@ -130,9 +131,9 @@ class LoadAminoData extends Fixture
         $amino->setName("Methionine");
         $amino->setName1Letter('M');
         $amino->setName3Letters('Met');
-        $amino->setWeight1(149.22);
-        $amino->setWeight2(149.22);
-        $amino->setResidueMolWeight(131.19);
+        $amino->setWeight1(149.2113);
+        $amino->setWeight2(149.2113);
+        $amino->setResidueMolWeight(131.196);
         $manager->persist($amino);
 
         $amino = new Amino();
@@ -140,18 +141,19 @@ class LoadAminoData extends Fixture
         $amino->setName("Asparagine");
         $amino->setName1Letter('N');
         $amino->setName3Letters('Asn');
-        $amino->setWeight1(132.12);
-        $amino->setWeight2(132.12);
-        $amino->setResidueMolWeight(114.08);
+        $amino->setWeight1(132.1179);
+        $amino->setWeight2(132.1179);
+        $amino->setResidueMolWeight(114.1026);
         $manager->persist($amino);
 
         $amino = new Amino();
         $amino->setId('O');
         $amino->setName("Pyrrolysine");
         $amino->setName1Letter('O');
-        $amino->setName3Letters('Pyr');
-        $amino->setWeight1(255.31);
-        $amino->setWeight2(255.31);
+        $amino->setName3Letters('Pyl');
+        $amino->setWeight1(255.3134);
+        $amino->setWeight2(255.3134);
+        $amino->setResidueMolWeight(237.2981);
         $manager->persist($amino);
 
         $amino = new Amino();
@@ -159,19 +161,19 @@ class LoadAminoData extends Fixture
         $amino->setName("Proline");
         $amino->setName1Letter('P');
         $amino->setName3Letters('Pro');
-        $amino->setWeight1(115.13);
-        $amino->setWeight2(115.13);
-        $amino->setResidueMolWeight(97.11);
+        $amino->setWeight1(115.1305);
+        $amino->setWeight2(115.1305);
+        $amino->setResidueMolWeight(97.1152);
         $manager->persist($amino);
 
         $amino = new Amino();
         $amino->setId('Q');
         $amino->setName("Glutamine");
         $amino->setName1Letter('Q');
-        $amino->setName3Letters('Gin');
-        $amino->setWeight1(146.15);
-        $amino->setWeight2(146.15);
-        $amino->setResidueMolWeight(128.13);
+        $amino->setName3Letters('Gln');
+        $amino->setWeight1(146.1445);
+        $amino->setWeight2(146.1445);
+        $amino->setResidueMolWeight(128.1292);
         $manager->persist($amino);
 
         $amino = new Amino();
@@ -179,9 +181,9 @@ class LoadAminoData extends Fixture
         $amino->setName("Arginine");
         $amino->setName1Letter('R');
         $amino->setName3Letters('Arg');
-        $amino->setWeight1(174.21);
-        $amino->setWeight2(174.21);
-        $amino->setResidueMolWeight(156.18);
+        $amino->setWeight1(174.201);
+        $amino->setWeight2(174.201);
+        $amino->setResidueMolWeight(156.1857);
         $manager->persist($amino);
 
         $amino = new Amino();
@@ -189,9 +191,9 @@ class LoadAminoData extends Fixture
         $amino->setName("Serine");
         $amino->setName1Letter('S');
         $amino->setName3Letters('Ser');
-        $amino->setWeight1(105.09);
-        $amino->setWeight2(105.09);
-        $amino->setResidueMolWeight(87.07);
+        $amino->setWeight1(105.0926);
+        $amino->setWeight2(105.0926);
+        $amino->setResidueMolWeight(87.0773);
         $manager->persist($amino);
 
         $amino = new Amino();
@@ -199,9 +201,9 @@ class LoadAminoData extends Fixture
         $amino->setName("Threonine");
         $amino->setName1Letter('T');
         $amino->setName3Letters('Thr');
-        $amino->setWeight1(119.12);
-        $amino->setWeight2(119.12);
-        $amino->setResidueMolWeight(101.10);
+        $amino->setWeight1(119.1192);
+        $amino->setWeight2(119.1192);
+        $amino->setResidueMolWeight(101.1039);
         $manager->persist($amino);
 
         $amino = new Amino();
@@ -209,8 +211,9 @@ class LoadAminoData extends Fixture
         $amino->setName("Selenocysteine");
         $amino->setName1Letter('U');
         $amino->setName3Letters('Sec');
-        $amino->setWeight1(168.05);
-        $amino->setWeight2(168.05);
+        $amino->setWeight1(168.0532);
+        $amino->setWeight2(168.0532);
+        $amino->setResidueMolWeight(150.0379);
         $manager->persist($amino);
 
         $amino = new Amino();
@@ -218,9 +221,9 @@ class LoadAminoData extends Fixture
         $amino->setName("Valine");
         $amino->setName1Letter('V');
         $amino->setName3Letters('Val');
-        $amino->setWeight1(117.15);
-        $amino->setWeight2(117.15);
-        $amino->setResidueMolWeight(99.13);
+        $amino->setWeight1(117.1463);
+        $amino->setWeight2(117.1463);
+        $amino->setResidueMolWeight(99.131);
         $manager->persist($amino);
 
         $amino = new Amino();
@@ -228,9 +231,9 @@ class LoadAminoData extends Fixture
         $amino->setName("Tryptophan");
         $amino->setName1Letter('W');
         $amino->setName3Letters('Trp');
-        $amino->setWeight1(204.22);
-        $amino->setWeight2(204.22);
-        $amino->setResidueMolWeight(186.20);
+        $amino->setWeight1(204.2252);
+        $amino->setWeight2(204.2252);
+        $amino->setResidueMolWeight(186.2099);
         $manager->persist($amino);
 
         $amino = new Amino();
@@ -238,9 +241,9 @@ class LoadAminoData extends Fixture
         $amino->setName("Tyrosine");
         $amino->setName1Letter('Y');
         $amino->setName3Letters('Tyr');
-        $amino->setWeight1(181.19);
-        $amino->setWeight2(181.19);
-        $amino->setResidueMolWeight(163.17);
+        $amino->setWeight1(181.1885);
+        $amino->setWeight2(181.1885);
+        $amino->setResidueMolWeight(163.1732);
         $manager->persist($amino);
 
         $amino = new Amino();
@@ -248,8 +251,9 @@ class LoadAminoData extends Fixture
         $amino->setName("Glutamate or glutamine");
         $amino->setName1Letter('Z');
         $amino->setName3Letters('N/A');
-        $amino->setWeight1(75.07);
-        $amino->setWeight2(204.22);
+        $amino->setWeight1(146.1445);
+        $amino->setWeight2(147.1293);
+        $amino->setResidueMolWeight(128.1292);
         $manager->persist($amino);
 
         $amino = new Amino();
@@ -257,8 +261,8 @@ class LoadAminoData extends Fixture
         $amino->setName("Any");
         $amino->setName1Letter('X');
         $amino->setName3Letters('XXX');
-        $amino->setWeight1(146.15);
-        $amino->setWeight2(146.15);
+        $amino->setWeight1(75.0666);
+        $amino->setWeight2(204.2252);
         $amino->setResidueMolWeight(114.822);
         $manager->persist($amino);
 
@@ -269,6 +273,7 @@ class LoadAminoData extends Fixture
         $amino->setName3Letters('STP');
         $amino->setWeight1(0);
         $amino->setWeight2(0);
+        $amino->setResidueMolWeight(0);
         $manager->persist($amino);
 
         $manager->flush();
