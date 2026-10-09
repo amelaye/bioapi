@@ -3,7 +3,7 @@
  * Database of Triplets
  * Inspired by BioPHP's project biophp.org
  * Created 13 april 2019
- * Last modified 7 august 2026
+ * Last modified 9 October 2026
  */
 namespace App\Entity;
 
@@ -35,6 +35,14 @@ class TripletSpecie
     #[ORM\Column]
     #[Assert\NotBlank]
     private $nature;
+
+    /**
+     * The NCBI genetic code table (transl_table) the species stands for : 1 for the standard code,
+     * 2 for the vertebrate mitochondrial one... The id above is only an auto-increment.
+     * @var     int|null
+     */
+    #[ORM\Column(type: 'integer', nullable: true)]
+    private $ncbiTableId;
 
     /**
      * @var     array
@@ -80,6 +88,22 @@ class TripletSpecie
     public function setNature(string $nature): void
     {
         $this->nature = $nature;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getNcbiTableId(): ?int
+    {
+        return $this->ncbiTableId;
+    }
+
+    /**
+     * @param int|null $ncbiTableId
+     */
+    public function setNcbiTableId(?int $ncbiTableId): void
+    {
+        $this->ncbiTableId = $ncbiTableId;
     }
 
     /**

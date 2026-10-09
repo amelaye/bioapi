@@ -17,6 +17,12 @@ class LoadVendorLinkData extends Fixture
     public function load(ObjectManager $manager): void
     {
         $link = new VendorLink();
+        $link->setId("B");
+        $link->setName("Thermo Fisher Scientific");
+        $link->setLink("https://www.thermofisher.com");
+        $manager->persist($link);
+
+        $link = new VendorLink();
         $link->setId("C");
         $link->setName("Minotech Biotechnology");
         $link->setLink("http://www.minotech.gr");
@@ -24,8 +30,8 @@ class LoadVendorLinkData extends Fixture
 
         $link = new VendorLink();
         $link->setId("E");
-        $link->setName("Minotech Stratagene");
-        $link->setLink("http://www.stratagene.com");
+        $link->setName("Agilent Technologies");
+        $link->setLink("https://www.agilent.com");
         $manager->persist($link);
 
         $link = new VendorLink();
@@ -108,8 +114,8 @@ class LoadVendorLinkData extends Fixture
 
         $link = new VendorLink();
         $link->setId("V");
-        $link->setName("MRC-Holland");
-        $link->setLink("http://www.mrc-holland.com");
+        $link->setName("Vivantis Technologies");
+        $link->setLink("https://vivantechnologies.com");
         $manager->persist($link);
 
         $link = new VendorLink();
