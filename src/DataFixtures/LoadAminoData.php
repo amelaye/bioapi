@@ -263,7 +263,7 @@ class LoadAminoData extends Fixture
         $amino->setName3Letters('XXX');
         $amino->setWeight1(75.0666);
         $amino->setWeight2(204.2252);
-        $amino->setResidueMolWeight(114.822);
+        $amino->setResidueMolWeight(57.0513);
         $manager->persist($amino);
 
         $amino = new Amino();

@@ -23,27 +23,9 @@ class LoadVendorLinkData extends Fixture
         $manager->persist($link);
 
         $link = new VendorLink();
-        $link->setId("C");
-        $link->setName("Minotech Biotechnology");
-        $link->setLink("http://www.minotech.gr");
-        $manager->persist($link);
-
-        $link = new VendorLink();
         $link->setId("E");
         $link->setName("Agilent Technologies");
         $link->setLink("https://www.agilent.com");
-        $manager->persist($link);
-
-        $link = new VendorLink();
-        $link->setId("F");
-        $link->setName("Fermentas AB");
-        $link->setLink("http://www.fermentas.com");
-        $manager->persist($link);
-
-        $link = new VendorLink();
-        $link->setId("H");
-        $link->setName("American Allied Biochemical, Inc.");
-        $link->setLink("http://www.aablabs.com");
         $manager->persist($link);
 
         $link = new VendorLink();
@@ -60,13 +42,13 @@ class LoadVendorLinkData extends Fixture
 
         $link = new VendorLink();
         $link->setId("K");
-        $link->setName("Takara Shuzo Co. Ltd.");
-        $link->setLink("http://www.takarashuzo.co.jp/english/index.htm");
+        $link->setName("Takara Bio Inc.");
+        $link->setLink("https://www.takarabio.com");
         $manager->persist($link);
 
         $link = new VendorLink();
         $link->setId("M");
-        $link->setName("Roche Applied Science");
+        $link->setName("Roche Custom Biotech");
         $link->setLink("http://www.roche.com");
         $manager->persist($link);
 
@@ -80,12 +62,6 @@ class LoadVendorLinkData extends Fixture
         $link->setId("O");
         $link->setName("Toyobo Biochemicals");
         $link->setLink("http://www.toyobo.co.jp/e/");
-        $manager->persist($link);
-
-        $link = new VendorLink();
-        $link->setId("P");
-        $link->setName("Megabase Research Products");
-        $link->setLink("http://www.cvienzymes.com");
         $manager->persist($link);
 
         $link = new VendorLink();
@@ -104,12 +80,6 @@ class LoadVendorLinkData extends Fixture
         $link->setId("S");
         $link->setName("Sigma Chemical Corporation");
         $link->setLink("http://www.sigmaaldrich.com");
-        $manager->persist($link);
-
-        $link = new VendorLink();
-        $link->setId("U");
-        $link->setName("Bangalore Genei");
-        $link->setLink("http://www.bangaloregenei.com");
         $manager->persist($link);
 
         $link = new VendorLink();
