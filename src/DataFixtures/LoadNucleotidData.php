@@ -20,56 +20,56 @@ class LoadNucleotidData extends Fixture
         $nucleotid->setLetter("A");
         $nucleotid->setComplement("T");
         $nucleotid->setNature("DNA");
-        $nucleotid->setWeight(313.245);
+        $nucleotid->setWeight(313.2065);
         $manager->persist($nucleotid);
 
         $nucleotid = new Nucleotid();
         $nucleotid->setLetter("T");
         $nucleotid->setComplement("A");
         $nucleotid->setNature("DNA");
-        $nucleotid->setWeight(304.225);
+        $nucleotid->setWeight(304.1932);
         $manager->persist($nucleotid);
 
         $nucleotid = new Nucleotid();
         $nucleotid->setLetter("G");
         $nucleotid->setComplement("C");
         $nucleotid->setNature("DNA");
-        $nucleotid->setWeight(329.245);
+        $nucleotid->setWeight(329.2059);
         $manager->persist($nucleotid);
 
         $nucleotid = new Nucleotid();
         $nucleotid->setLetter("C");
         $nucleotid->setComplement("G");
         $nucleotid->setNature("DNA");
-        $nucleotid->setWeight(289.215);
+        $nucleotid->setWeight(289.1818);
         $manager->persist($nucleotid);
 
         $nucleotid = new Nucleotid();
         $nucleotid->setLetter("A");
         $nucleotid->setComplement("U");
         $nucleotid->setNature("RNA");
-        $nucleotid->setWeight(329.245);
+        $nucleotid->setWeight(329.2059);
         $manager->persist($nucleotid);
 
         $nucleotid = new Nucleotid();
         $nucleotid->setLetter("U");
         $nucleotid->setComplement("A");
         $nucleotid->setNature("RNA");
-        $nucleotid->setWeight(306.195);
+        $nucleotid->setWeight(306.166);
         $manager->persist($nucleotid);
 
         $nucleotid = new Nucleotid();
         $nucleotid->setLetter("G");
         $nucleotid->setComplement("C");
         $nucleotid->setNature("RNA");
-        $nucleotid->setWeight(345.245);
+        $nucleotid->setWeight(345.2053);
         $manager->persist($nucleotid);
 
         $nucleotid = new Nucleotid();
         $nucleotid->setLetter("C");
         $nucleotid->setComplement("G");
         $nucleotid->setNature("RNA");
-        $nucleotid->setWeight(305.215);
+        $nucleotid->setWeight(305.1812);
         $manager->persist($nucleotid);
 
         $manager->flush();

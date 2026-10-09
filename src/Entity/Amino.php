@@ -51,21 +51,21 @@ class Amino
     /**
      * @var float
      */
-    #[ORM\Column(type: 'decimal', precision: 5, scale: 2)]
+    #[ORM\Column(type: 'decimal', precision: 8, scale: 4)]
     #[Assert\NotBlank]
     private $weight1;
 
     /**
      * @var float
      */
-    #[ORM\Column(type: 'decimal', precision: 5, scale: 2)]
+    #[ORM\Column(type: 'decimal', precision: 8, scale: 4)]
     #[Assert\NotBlank]
     private $weight2;
 
     /**
      * @var float
      */
-    #[ORM\Column(type: 'decimal', precision: 5, scale: 2, nullable: true)]
+    #[ORM\Column(type: 'decimal', precision: 8, scale: 4, nullable: true)]
     private $residueMolWeight;
 
     /**

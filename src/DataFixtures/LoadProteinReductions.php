@@ -167,7 +167,7 @@ class LoadProteinReductions extends Fixture
         $reduction = new ProteinReduction();
         $reduction->setAlphabet("3IMG");
         $reduction->setLetters("PNH");
-        $reduction->setPattern("G|T|S|Y|P|M");
+        $reduction->setPattern("G|T|S|Y|P|H");
         $reduction->setNature("N: Neutral");
         $reduction->setReduction("n");
         $reduction->setDescription("3 IMGT amino acid hydropathy alphabet");
